@@ -5,20 +5,17 @@
     {% for issue in issues %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
             <div class="panel-body">
-                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ issue.image }}')"></div>
-
+                
                 <h3>{{ issue.name }}</h3>
                 <p class="issue-description">{{ issue.description }}</p>
-                <p class="issue-description">{{ issue.steps_to_reproduce }}</p>
-                <p class="issue-description">{{ issue.expected_result }}</p>
-                <p class="issue-description">{{ issue.actual_result }}</p>
+                <p><span class="boldtext">Published on:</span> {{ issue.published_date }} </p>
 
                 <form method="post" action="{% url 'add_to_cart' issue.id %}">
                     {% csrf_token %}
                     <div class="input-group">
-                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Number of Votes">
                         <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
+                            <button class="btn btn-success" type="submit">Vote</button>
                         </span>
                     </div>
                 </form>

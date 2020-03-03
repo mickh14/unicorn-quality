@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 from django.db import models
@@ -7,9 +8,7 @@ from django.db import models
 class Issue(models.Model):
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
-    steps_to_reproduce = models.TextField(max_length=140, default='Enter steps')
-    expected_result = models.TextField(max_length=140, default='wWat should happen?')
-    actual_result = models.TextField(max_length=140, default='What is happening?')
+    published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     
 
     def __str__(self):
