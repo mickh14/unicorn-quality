@@ -61,6 +61,13 @@
                 <input type="text" name="q">
                 <button type="search">Search</button>
             </form>
+            <form action="{% url 'issue_filter' %}" method="get">                
+                <select id="issue_type" name="b">
+                    <option value="bug">Bug</option>
+                    <option value="feature">Feature</option>
+                </select>
+                <button type="search">Search</button>
+            </form>
         </div>
         {% block content %} {% endblock %}
     </div>

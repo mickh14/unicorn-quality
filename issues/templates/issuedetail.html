@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+        
+        <div class="col-sm-10 col-md-9">
+            
+            <h3>{{ issue.name }}</h3>
+            <div class="row">
+                <div class="col-xs-9">
+                    <p>{{ issue.description }}</p>
+                    <p><span class="boldtext">Created on:</span> {{ issue.published_date }} </p>
+                    <p><span class="boldtext">Views:</span> {{issue.views}}</p>
+                    <a href="{% url 'issues' %}" class="btn btn-default">Back to Issues</a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+{% endblock %}
