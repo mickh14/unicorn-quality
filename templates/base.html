@@ -27,6 +27,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{% url 'new_issue' %}">New Issue</a></li>
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}">Profile</a></li>
                         <li><a href="{% url 'logout' %}">Log Out</a></li>
@@ -55,12 +56,14 @@
             </div>
         </div>
     {% endif %}
-    <div class="container">
-        <div class="display">
+    <div class="container base-bgd">
+        <div class="centre-elem">
             <form action="{% url 'search' %}" method="get">
                 <input type="text" name="q">
                 <button type="search">Search</button>
             </form>
+        </div>
+        <div class="centre-elem">    
             <form action="{% url 'issue_filter' %}" method="get">                
                 <select id="issue_type" name="b">
                     <option value="bug">Bug</option>

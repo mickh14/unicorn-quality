@@ -11,6 +11,21 @@ footer {
     color: #A9A9A9;
 }
 
+.base-bgd {
+    background-color: lightgray;
+}
+
+.issue-bgd {
+    background-color: lightblue;
+}
+
+.centre-elem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
 .icon-bar {
     background-color: #fff;
 }
