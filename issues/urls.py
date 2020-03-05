@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'^bugs/$', all_bugs, name='bugs'),
     url(r'^(?P<pk>\d+)/$', issue_detail, name='issue_detail'),
     url(r'^new/$', create_or_edit_issue, name='new_issue'),
+    url(r'^(?P<pk>\d+)/edit/$', create_or_edit_issue, name='edit_issue')
 ]

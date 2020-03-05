@@ -9,6 +9,9 @@ from django.db import models
 class Issue(models.Model):
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
+    step_to_Reproduce = models.TextField(max_length=1000, default='')
+    expected_Results = models.TextField(max_length=500, default='')
+    actual_Results = models.TextField(max_length=500, default='')
     published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     issue_option = (
         ('Bug', 'Bug'),
