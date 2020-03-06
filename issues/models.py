@@ -19,6 +19,7 @@ class Issue(models.Model):
     )
     issue_type = models.CharField(max_length=30, blank=True, null=False, choices=issue_option)
     views = models.IntegerField(default=0)
+    price = models.DecimalField(max_digits=6, decimal_places=2, default='5')
     
 
     def __str__(self):

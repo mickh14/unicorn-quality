@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib import messages, auth
 from django.core.urlresolvers import reverse
 from .forms import UserLoginForm, UserRegistrationForm
+from .models import User
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 
@@ -54,9 +55,22 @@ def profile(request):
 def register(request):
     """A view that manages the registration form"""
     if request.method == 'POST':
-        user_form = UserRegistrationForm(request.POST)
+        user_form = UserRegistrationForm(request.POST, request.FILES)
         if user_form.is_valid():
-            user_form.save()
+            username = form.cleaned_data.get("username")
+            email = form.cleaned_data.get("email")
+            password1 = form.cleaned_data.get("password1")
+            password2 = form.cleaned_data.get("password2")
+            img = form.cleaned_data.get("image") 
+            obj = User.objects.create( 
+                                 username = username,
+                                 email = email,
+                                 password1 = password1,
+                                 password2 = password2,
+                                 img = img 
+                                 ) 
+            obj.save()
+            print(obj)
 
             user = auth.authenticate(request.POST.get('email'),
                                      password=request.POST.get('password1'))

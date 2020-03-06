@@ -7,7 +7,7 @@ def view_cart(request):
 
 
 def add_to_cart(request, id):
-    """Add a quantity of the specified issues to the cart"""
+    """Add a quantity of votes for the issues to the cart"""
     quantity = int(request.POST.get('quantity'))
 
     cart = request.session.get('cart', {})
