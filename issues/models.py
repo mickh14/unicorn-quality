@@ -18,7 +18,17 @@ class Issue(models.Model):
         ('Feature', 'Feature'),
     )
     issue_type = models.CharField(max_length=30, blank=True, null=False, choices=issue_option)
+    status_option = (
+        ('Draft', 'Draft'),
+        ('ToDo', 'ToDo'),
+        ('InDevelopment', 'InDevelopment'),
+        ('Fixed', 'Fixed'),
+        ('InTest', 'InTest'),
+        ('Done', 'Done'),
+    )
+    status = models.CharField(max_length=30, blank=True, null=False, choices=status_option)
     views = models.IntegerField(default=0)
+    votes = models.IntegerField(default=0)
     price = models.DecimalField(max_digits=6, decimal_places=2, default='5')
     
 

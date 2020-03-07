@@ -14,3 +14,11 @@ def do_search(request):
 def issue_filter(request):
     issues = Issue.objects.filter(issue_type__icontains=request.GET['b'])
     return render(request, "issues.html", {"issues": issues})
+
+def bug_done(request):
+    status = Issue.objects.filter(status__exact='Done').filter(issue_type__exact='Bug')
+    return render(request, "developed.html", {"issues": status})
+
+def feature_done(request):
+    status = Issue.objects.filter(status__exact='Done').filter(issue_type__exact='Feature')
+    return render(request, "developed.html", {"issues": status})      

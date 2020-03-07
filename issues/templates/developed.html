@@ -24,16 +24,6 @@
                             <p class="issue-description">Issue Type:{{ issue.issue_type }}</p>
                             <p><span class="boldtext">Views:</span> {{issue.views}}</p>
                             <p><span class="boldtext">Votes:</span> {{issue.votes}}</p>
-
-                            <form method="post" action="{% url 'add_to_cart' issue.id %}">
-                                {% csrf_token %}
-                                <div class="input-group">
-                                    <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Number of Votes">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-success" type="submit">Vote</button>
-                                    </span>
-                                </div>
-                            </form>
                         </div>
                     </div>        
                 </div>   
