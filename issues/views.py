@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.utils import timezone
 from .models import Issue
 from .forms import IssueForm
@@ -24,6 +24,20 @@ def issue_detail(request, pk):
     issue.views += 1
     issue.save()
     return render(request, "issuedetail.html", {'issue': issue})
+
+def increment_vote(request, pk):
+    """
+    Create a view that returns a single
+    issue object based on the issue ID (pk) and
+    render it to the 'issuedetail.html' template.
+    Or return a 404 error if the post is
+    not found
+    """
+    issue_vote = get_object_or_404(Issue, pk=pk)
+    issue_vote.votes += 1
+    issue_vote.save()
+    return redirect(issue_detail, issue_vote.pk)
+    #return render(request, "issuedetail.html", {'issue_vote': issue_vote})
 
 def create_or_edit_issue(request, pk=None):
     """

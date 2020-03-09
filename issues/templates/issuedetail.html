@@ -16,6 +16,7 @@
                     <p><strong>Actual Results</strong></br>{{ issue.actual_Results }}</p>
                     <p><span class="boldtext"><strong></br>Created on:</strong></span> {{ issue.published_date }} </p>
                     <p><span class="boldtext"><strong></br>Views:</strong></span> {{issue.views}}</p>
+                    <p><span class="boldtext"><strong></br>Votes:</strong></span> {{issue.votes}}</p>
                     <a href="{% url 'issues' %}" class="btn btn-default">Back to Issues</a>
                     <a href="{% url 'edit_issue' issue.id %}" class="btn btn-default">Edit Issue</a>
                     <hr>
