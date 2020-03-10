@@ -5,9 +5,20 @@
         
         <div class="col-sm-10 col-md-9">
             <div class="centre-elem">
-                <h3>{{ issue.name }}</h3>
-                <hr>
-            </div>
+			{% if issue.issue_type == "Bug" %}
+			    <i class="fas fa-bug"> {{ issue.name }}</i>
+			{% else %}
+			    <i class="fas fa-check-double"> {{ issue.name }}</i>
+			{% endif %}
+		</div>
+        <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+                    <i class="far fa-eye"> {{ issue.views }}</i>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+                    <i class="fas fa-thumbs-up"> {{ issue.votes }}</i>
+                </div>    
+        </div>
             <div class="row">
                 <div class="col-xs-9">
                     <p><strong>Description</strong></br>{{ issue.description }}</p>

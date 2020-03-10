@@ -30,7 +30,7 @@ class Issue(models.Model):
     views = models.IntegerField(default=0)
     votes = models.IntegerField(default=0)
     price = models.DecimalField(max_digits=6, decimal_places=2, default='5')
-    
+    name = models.CharField(max_length=254, default='')
 
     def __str__(self):
         return self.name
