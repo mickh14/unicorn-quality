@@ -17,6 +17,9 @@ footer {
 
 .issue-bgd {
     background-color: lightblue;
+    margin-top: 10px;
+    padding-top: 10px;
+    border: 1px solid #ededed;
 }
 
 .centre-elem {

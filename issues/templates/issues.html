@@ -2,48 +2,40 @@
 {% block content %}
 
 <div class="row row-flex centre-elem">
-    {% for issue in issues %}
-        <div class="col-xs-9 display panel panel-default issue-bgd">
-            <div class="panel-body">
-                <div class="col-md-2 col-sm-3 text-center">
-                    <a class="story-img" href="#">
-                        <img src="/media/img/profile.jpg" class="img-circle">
-                    </a>
-                    <p><span class="boldtext">Author:</span> Billbob</p>
-                </div>
-                
-                <div class="col-md-10 col-sm-9">
-                
-                    <h3>{{ issue.name }}</h3>
-                    <div class="row">
-                        <div class="col-xs-9">
-                            <p>Description: {{ issue.description|truncatewords:30 }}</p>
-                            <p class="boldtext">Status:{{ issue.status }}</p>
-                            <p><a href="{% url 'issue_detail' issue.id %}"  class="btn btn-default">Read more</a></p>
-                            <p><span class="boldtext">Created on:</span> {{ issue.published_date }} </p>
-                            <p class="issue-description">Issue Type:{{ issue.issue_type }}</p>
-                            <p><span class="boldtext">Views:</span> {{issue.views}}</p>
-                            <p><span class="boldtext">Votes:</span> {{issue.votes}}</p>
+	{% for issue in issues %}
+	<div class="col-xs-9 card issue-bgd">
+		<div class="card-header centre-elem">
+			{% if issue.issue_type == "Bug" %}
+			<i class="fas fa-bug"> {{ issue.name }}</i>
+			{% else %}
+			<i class="fas fa-check-double"> {{ issue.name }}</i>
+			{% endif %}
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">Description: {{ issue.description|truncatewords:30 }}</h5>
+			<p class="boldtext card-text">Status:{{ issue.status }}</p>
+			<p class="card-text"><a href="{% url 'issue_detail' issue.id %}" class="btn btn-default">Read more</a></p>
+			<p class="card-text"><span class="boldtext">Created on:</span> {{ issue.published_date }} </p>
+			<p class="issue-description card-text">Issue Type:{{ issue.issue_type }}</p>
+			<p class="card-text"><span class="boldtext">Views:</span> {{issue.views}}</p>
+			<p class="card-text"><span class="boldtext">Votes:</span> {{issue.votes}}</p>
 
-                            {% if issue.issue_type == "Bug" %}
-                                <p><a href="{% url 'increment_vote' issue.id %}"  class="btn btn-success">Vote</a></p>
-                            {% else %}
-                                <form method="post" action="{% url 'add_to_cart' issue.id %}">
-                                    {% csrf_token %}
-                                    <div class="input-group">
-                                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Number of Votes">
-                                        <span class="input-group-btn">
+			{% if issue.issue_type == "Bug" %}
+			<p><a href="{% url 'increment_vote' issue.id %}" class="btn btn-success">Vote</a></p>
+			{% else %}
+			<form method="post" action="{% url 'add_to_cart' issue.id %}">
+				{% csrf_token %}
+				<div class="input-group">
+					<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Number of Votes">
+					<span class="input-group-btn">
                                             <button class="btn btn-success" type="submit">Vote</button>
                                         </span>
-                                    </div>
-                                </form>
-                            {% endif %}    
-                        </div>
-                    </div>        
-                </div>   
-            </div>
-        </div>
-    {% endfor %}
+				</div>
+			</form>
+			{% endif %}
+		</div>
+	</div>
+	{% endfor %}
 </div>
 
 {% endblock %}
