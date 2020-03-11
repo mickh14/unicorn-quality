@@ -12,12 +12,42 @@
 			{% endif %}
 		</div>
         <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+                <div class="col-sm-12 col-md-6 col-lg-4 text-center">
                     <i class="far fa-eye"> {{ issue.views }}</i>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+                <div class="col-sm-12 col-md-6 col-lg-4 text-center">
                     <i class="fas fa-thumbs-up"> {{ issue.votes }}</i>
-                </div>    
+                </div>
+                {% if issue.status == "Draft" %}
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <p class="boldtext card-text"><span class="draft-bgd status-style">{{ issue.status }}</span></p>
+                    </div>
+                {% elif issue.status == "ToDo" %}
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <p class="boldtext card-text"><span class="todo-bgd status-style">{{ issue.status }}</span></p>
+                    </div>   
+                {% elif issue.status == "InDevelopment" %}
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <p class="boldtext card-text"><span class="indev-bgd status-style">{{ issue.status }}</span></p>
+                    </div> 
+                {% elif issue.status == "Fixed" %}
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <p class="boldtext card-text"><span class="fixed-bgd status-style">{{ issue.status }}</span></p>
+                    </div> 
+                {% elif issue.status == "InTest" %}
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <p class="boldtext card-text"><span class="intest-bgd status-style">{{ issue.status }}</span></p>
+                    </div> 
+                {% elif issue.status == "Done" %}
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <p class="boldtext card-text"><span class="done-bgd status-style">{{ issue.status }}</span></p>
+                    </div>         
+
+                {% else %}
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <p class="boldtext card-text"><span class="draft-bgd">Issue: {{ issue.status }}</span></p>
+                    </div>
+                {% endif %}
         </div>
             <div class="row">
                 <div class="col-xs-9">
@@ -26,14 +56,16 @@
                     <p><strong>Expected Results</strong></br>{{ issue.expected_Results }}</p>
                     <p><strong>Actual Results</strong></br>{{ issue.actual_Results }}</p>
                     <p><span class="boldtext"><strong></br>Created on:</strong></span> {{ issue.published_date }} </p>
-                    <p><span class="boldtext"><strong></br>Views:</strong></span> {{issue.views}}</p>
-                    <p><span class="boldtext"><strong></br>Votes:</strong></span> {{issue.votes}}</p>
-                    <a href="{% url 'issues' %}" class="btn btn-default">Back to Issues</a>
-                    <a href="{% url 'edit_issue' issue.id %}" class="btn btn-default">Edit Issue</a>
-                    <hr>
+                    
+                    
                 </div>
             </div>
+            <div class="row centre-elem">
+                <a href="{% url 'issues' %}" class="btn btn-default">Back to Issues</a>
+                <a href="{% url 'edit_issue' issue.id %}" class="btn btn-default">Edit Issue</a>
+            </div> 
         </div>
+                   
     </div> 
 
 {% endblock %}
