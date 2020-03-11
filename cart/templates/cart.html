@@ -6,11 +6,11 @@
 <div class="row row-flex centre-elem">
     {% for item in cart_items %}
     
-    <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-display">        
-        <div class="caption panel-body issue-bgd">
-            <p><a href="{% url 'issue_detail' item.issue.id %}"  class="btn btn-default">{{ item.issue.name }}</a></p>
-            <p class="issue-description">{{ item.issue.description |truncatewords:5 }}</p>
-            <p>{{ item.issue.price }} per vote</p>
+    <div class="col-sm-12 col-md-6 col-lg-3 card">        
+        <div class="card-body issue-bgd">
+            <p class="card-title btn btn-default centre-elem"><a href="{% url 'issue_detail' item.issue.id %}">{{ item.issue.name }}</a></p>
+            <p class="card-subtitle mb-2">{{ item.issue.description |truncatewords:5 }}</p>
+            <p class="card-text text-centre">€{{ item.issue.price }} per vote</p>
             <p>
                 
                 <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
@@ -23,7 +23,7 @@
                             <div class="input-group-addon">{{item.quantity}}</div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
+                    <button type="submit" class="btn btn-primary centre-elem"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
                 </form>
             </p>
         </div>

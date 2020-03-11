@@ -12,101 +12,43 @@
 			{% endif %}
 		</div>
 		<div class="row">
-			<div class="col-sm-12 col-md-6 col-lg-4 text-center">
+			<div class="col-sm-12 col-md-4 col-lg-4 text-center">
 				<i class="far fa-eye"> {{ issue.views }}</i>
 			</div>
-			<div class="col-sm-12 col-md-6 col-lg-4 text-center">
+			<div class="col-sm-12 col-md-4 col-lg-4 text-center">
 				<i class="fas fa-thumbs-up"> {{ issue.votes }}</i>
 			</div>
 			{% if issue.status == "Draft" %}
-			<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="col-sm-12 col-md-4 col-lg-4 text-center">
 				<p class="boldtext"><span class="draft-bgd status-style">{{ issue.status }} </span></p>
 			</div>
 			{% elif issue.status == "ToDo" %}
-			<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="col-sm-12 col-md-4 col-lg-4 text-center">
 				<p class="boldtext"><span class="todo-bgd status-style">{{ issue.status }}</span></p>
 			</div>
 			{% elif issue.status == "InDevelopment" %}
-			<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="col-sm-12 col-md-4 col-lg-4 text-center">
 				<p class="boldtext"><span class="indev-bgd status-style">{{ issue.status }}</span></p>
 			</div>
 			{% elif issue.status == "Fixed" %}
-			<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="col-sm-12 col-md-4 col-lg-4 text-center">
 				<p class="boldtext"><span class="fixed-bgd status-style">{{ issue.status }}</span></p>
 			</div>
 			{% elif issue.status == "InTest" %}
-			<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="col-sm-12 col-md-4 col-lg-4 text-center">
 				<p class="boldtext"><span class="intest-bgd status-style">{{ issue.status }}</span></p>
 			</div>
 			{% elif issue.status == "Done" %}
-			<div class="col-sm-12 col-md-6 col-lg-4">
-				<p class="boldtext"><span class="done-bgd">{{ issue.status }}</span></p>
+			<div class="col-sm-12 col-md-4 col-lg-4 text-center">
+				<p class="boldtext"><span class="done-bgd status-style">{{ issue.status }}</span></p>
 			</div>
 
 			{% else %}
-			<div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="col-sm-12 col-md-4 col-lg-4 text-center">
 				<p class="boldtext card-text"><span class="draft-bgd status-style">Issue: {{ issue.status }}</span></p>
 			</div>
 			{% endif %}
 		</div>
-<<<<<<< HEAD
-        <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-4 text-center">
-                    <i class="far fa-eye"> {{ issue.views }}</i>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 text-center">
-                    <i class="fas fa-thumbs-up"> {{ issue.votes }}</i>
-                </div>
-                {% if issue.status == "Draft" %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <p class="boldtext card-text"><span class="draft-bgd status-style">{{ issue.status }}</span></p>
-                    </div>
-                {% elif issue.status == "ToDo" %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <p class="boldtext card-text"><span class="todo-bgd status-style">{{ issue.status }}</span></p>
-                    </div>   
-                {% elif issue.status == "InDevelopment" %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <p class="boldtext card-text"><span class="indev-bgd status-style">{{ issue.status }}</span></p>
-                    </div> 
-                {% elif issue.status == "Fixed" %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <p class="boldtext card-text"><span class="fixed-bgd status-style">{{ issue.status }}</span></p>
-                    </div> 
-                {% elif issue.status == "InTest" %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <p class="boldtext card-text"><span class="intest-bgd status-style">{{ issue.status }}</span></p>
-                    </div> 
-                {% elif issue.status == "Done" %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <p class="boldtext card-text"><span class="done-bgd status-style">{{ issue.status }}</span></p>
-                    </div>         
-
-                {% else %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <p class="boldtext card-text"><span class="draft-bgd">Issue: {{ issue.status }}</span></p>
-                    </div>
-                {% endif %}
-        </div>
-            <div class="row">
-                <div class="col-xs-9">
-                    <p><strong>Description</strong></br>{{ issue.description }}</p>
-                    <p><strong>Steps To Reproduce</strong></br>{{ issue.step_to_Reproduce }}</p>
-                    <p><strong>Expected Results</strong></br>{{ issue.expected_Results }}</p>
-                    <p><strong>Actual Results</strong></br>{{ issue.actual_Results }}</p>
-                    <p><span class="boldtext"><strong></br>Created on:</strong></span> {{ issue.published_date }} </p>
-                    
-                    
-                </div>
-            </div>
-            <div class="row centre-elem">
-                <a href="{% url 'issues' %}" class="btn btn-default">Back to Issues</a>
-                <a href="{% url 'edit_issue' issue.id %}" class="btn btn-default">Edit Issue</a>
-            </div> 
-        </div>
-                   
-    </div> 
-=======
 		<div class="row">
 			<div class="col-xs-9">
 				<p><strong>Description:</strong></br>{{ issue.description }}</p>
@@ -119,7 +61,7 @@
 				        <p><strong>Actual Results:</strong></br>{{ issue.actual_Results }}</p>
                     </div>
 				</div>        
-				<p><span class="boldtext"><strong></br>Created on:</strong></span> {{ issue.published_date }} </p>
+				    <p><span class="boldtext"><strong></br>Created on:</strong></span> {{ issue.published_date }} </p>
 
 			</div>
 		</div>
@@ -129,6 +71,5 @@
 		</div>
 	</div>
 </div>
->>>>>>> 99f7c883780c160a8e77b0d65906be16e0080793
 
 {% endblock %}

@@ -100,6 +100,13 @@ i {
 .status-style {
     font-size: 30px;
 }
+
+.leg-style {
+    color: black;
+    background-color: #ee878752;
+    text-align: center;
+}
+
 .icon-bar {
     background-color: #fff;
 }
