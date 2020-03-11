@@ -107,6 +107,24 @@ i {
     text-align: center;
 }
 
+.search-style {
+    background: #514b497a;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.search-button {
+    color: white;
+    background-color: #002d80b5;
+    border: 1px solid #ddd;
+    height: 30px;
+}
+
+.search-field {
+    height: 30px;
+    color: black;
+}
+
 .icon-bar {
     background-color: #fff;
 }
@@ -128,7 +146,7 @@ i {
     background-color: #c67605;
 }
 
-.product {
+.issue {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;

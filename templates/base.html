@@ -67,21 +67,22 @@
         </div>
     {% endif %}
     <div class="container main_bgd">
-        <div class="centre-elem">
-            <form action="{% url 'search' %}" method="get">
-                <input type="text" name="q">
-                <button type="search">Search</button>
-            </form>
-        </div>
-        <div class="centre-elem">    
-            <form action="{% url 'issue_filter' %}" method="get">                
-                <select id="issue_type" name="b">
-                    <option value="bug">Bug</option>
-                    <option value="feature">Feature</option>
-                </select>
-                <button type="search">Search</button>
-            </form>
-        </div>
+        <div class="search-style centre-elem">
+            
+                <form action="{% url 'search' %}" method="get">
+                    <input class="search-field"    type="text" name="q">
+                    <button class="btn search-button" type="search">Search</button>
+                </form>
+               
+                <form action="{% url 'issue_filter' %}" method="get">                
+                    <select  class="search-field" id="issue_type" name="b">
+                        <option value="bug">Bug</option>
+                        <option value="feature">Feature</option>
+                    </select>
+                    <button class="btn search-button" type="search">Search</button>
+                </form>
+            
+        </div>    
         {% block content %} {% endblock %}
     </div>
     <footer>
