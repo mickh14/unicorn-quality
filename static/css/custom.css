@@ -1,3 +1,5 @@
+/*--------main Style---------*/
+
 body {
     font-family: Arial;
     padding-top: 100px;
@@ -11,6 +13,8 @@ footer {
     color: #A9A9A9;
 }
 
+
+/*--------background Style---------*/
 .base-bgd {
     background-color: lightgray;
 }
@@ -22,6 +26,53 @@ footer {
     border: 1px solid #ededed;
 }
 
+/*--------background status-text---------*/
+.draft-bgd {
+    background-color: orange;
+    color: white;
+}
+
+.todo-bgd {
+    background-color: green;
+    color: white;
+}
+
+.indev-bgd {
+    background-color: blue;
+    color: white;
+}
+
+.fixed-bgd {
+    background-color: purple;
+    color: white;
+}
+
+.intest-bgd {
+    background-color: red;
+    color: white;
+}
+
+.done-bgd {
+    background-color: black;
+    color: white;
+    border: 10px;
+    border-color: white;
+}
+
+.main_bgd{
+    background: url("../images/tabletools.jpg") no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+
+}
+
+/*--------customer Style---------*/
+
 .centre-elem {
     display: flex;
     justify-content: center;
@@ -32,7 +83,14 @@ footer {
     margin-left: 10px;
 }
 
+i {
+    font-size: 30px;
+}
 
+.icon {
+    padding: 10px;
+    margin: 10px;
+}
 .icon-bar {
     background-color: #fff;
 }

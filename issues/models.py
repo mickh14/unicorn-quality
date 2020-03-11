@@ -12,7 +12,7 @@ class Issue(models.Model):
     step_to_Reproduce = models.TextField(max_length=1000, default='')
     expected_Results = models.TextField(max_length=500, default='')
     actual_Results = models.TextField(max_length=500, default='')
-    published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
+    published_date = models.DateField(blank=True, null=True, default=timezone.now)
     issue_option = (
         ('Bug', 'Bug'),
         ('Feature', 'Feature'),
