@@ -3,6 +3,7 @@
 body {
     font-family: Arial;
     padding-top: 100px;
+    color: white;
 }
 
 footer {
@@ -20,7 +21,7 @@ footer {
 }
 
 .issue-bgd {
-    background-color: lightblue;
+    background-color: #3f51b5b8;
     margin-top: 10px;
     padding-top: 10px;
     border: 1px solid #ededed;
@@ -90,6 +91,10 @@ i {
 .icon {
     padding: 10px;
     margin: 10px;
+}
+
+.status-style {
+    font-size: 30px;
 }
 .icon-bar {
     background-color: #fff;
