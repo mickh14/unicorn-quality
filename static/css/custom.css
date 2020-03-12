@@ -118,7 +118,9 @@ i {
     background-color: #002d80b5;
     border: 1px solid #ddd;
     height: 30px;
+    margin: 10px;
 }
+
 
 .search-field {
     height: 30px;

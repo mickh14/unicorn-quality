@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
+
 # Create your models here.
 from django.db import models
 
@@ -31,6 +32,11 @@ class Issue(models.Model):
     votes = models.IntegerField(default=0)
     price = models.DecimalField(max_digits=6, decimal_places=2, default='5')
     name = models.CharField(max_length=254, default='')
+    
 
     def __str__(self):
         return self.name
+
+class Comments(models.Model):
+    Issue = models.ForeignKey(Issue, null=False)
+    comments = models.TextField(max_length=1000, default='')
