@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from .models import Issue
 from .forms import IssueForm
@@ -39,6 +40,7 @@ def increment_vote(request, pk):
     return redirect(issue_detail, issue_vote.pk)
     #return render(request, "issuedetail.html", {'issue_vote': issue_vote})
 
+@login_required()
 def create_or_edit_issue(request, pk=None):
     """
     Create a view that allows us to create

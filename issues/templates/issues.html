@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row row-flex text-center centre-elem">
+<div class="row row-flex centre-elem">
 	{% for issue in issues %}
 	<div class="card col-xs-9 issue-bgd">
-		<div class="card-header">
+		<div class="card-header centre-elem">
 			{% if issue.issue_type == "Bug" %}
 			    <i class="fas fa-bug"> {{ issue.name }}</i>
 			{% else %}
@@ -12,8 +12,8 @@
 			{% endif %}
 		</div>
 		<div class="card-body">
-			<h5 class="card-title">Description: {{ issue.description|truncatewords:30 }}</h5>
-			<div class="row">
+			<h5 class="card-title description">Description: {{ issue.description|truncatewords:30 }}</h5>
+			<div class="row centre-elem">
                 {% if issue.status == "Draft" %}
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <p class="boldtext card-text"><span class="draft-bgd">{{ issue.status }}</span></p>
@@ -68,7 +68,7 @@
 			{% else %}
 			<form method="post" action="{% url 'add_to_cart' issue.id %}">
 				{% csrf_token %}
-				<div class="input-group">
+				<div class="input-group form-style">
 					<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Number of Votes">
 					<span class="input-group-btn">
                         <button class="btn btn-success" type="submit">Vote</button>
