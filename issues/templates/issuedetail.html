@@ -65,6 +65,30 @@
 
 			</div>
 		</div>
+        <div class="">
+            <div class="">
+                {% if issue.issue_type == "Bug" %}
+                    <p><strong>Vote for me.</strong> The Bug with most votes is fixed first!!</p>
+                {% else %}
+                <p><strong>Vote for me.</strong> {{ issue.issue_votes_required }} votes needed for development to begin. Vote now to have this feature added</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="card-footer text-center">
+			{% if issue.issue_type == "Bug" %}
+				<a href="{% url 'increment_vote' issue.id %}" class="btn btn-success">Vote</a></p>
+			{% else %}
+			<form method="post" action="{% url 'add_to_cart' issue.id %}">
+				{% csrf_token %}
+				<div class="input-group form-style">
+					<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Number of Votes">
+					<span class="input-group-btn">
+                        <button class="btn btn-success" type="submit">Vote</button>
+                    </span>
+				</div>
+			</form>
+			{% endif %}
+		</div>
 		<div class="row centre-elem">
 			<a href="{% url 'issues' %}" class="btn btn-default">Back to Issues</a>
 			<a href="{% url 'edit_issue' issue.id %}" class="btn btn-default">Edit Issue</a>

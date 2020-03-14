@@ -28,6 +28,8 @@ def checkout(request):
             for id, quantity in cart.items():
                 issue = get_object_or_404(Issue, pk=id)
                 total += quantity * issue.price
+                issue.votes += 1
+                issue.save()
                 order_line_item = OrderLineItem(
                     order=order,
                     issue=issue,
