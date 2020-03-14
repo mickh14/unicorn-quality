@@ -97,6 +97,10 @@ i {
     margin: 10px;
 }
 
+.dev-item-stle {
+    font-size: 20px;
+}
+
 .total {
   margin-right: 10px;
   display: inline-block;

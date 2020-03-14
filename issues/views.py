@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
-from .models import Issue
-from .forms import IssueForm
+from .models import Issue, Comment
+from .forms import IssueForm, CommentForm
 
 # Create your views here.
 def all_issues(request):
@@ -56,3 +56,21 @@ def create_or_edit_issue(request, pk=None):
     else:
         form = IssueForm(instance=issue)
     return render(request, 'issueform.html', {'form': form})
+
+
+@login_required()
+def add_comment(request, pk):
+    """
+    Create a view that allows us add a comment
+    """
+    issue = get_object_or_404(Issue, pk=pk)
+    if request.method == "POST":
+        form = CommentForm(request.POST, request.FILES, instance=issue)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.issue = issue
+            comment.save()
+            return redirect(issue_detail, issue.pk)
+    else:
+        form = CommentForm(instance=issue)
+    return render(request, 'commentform.html', {'form': form})

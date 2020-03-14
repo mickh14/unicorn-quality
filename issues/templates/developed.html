@@ -2,34 +2,51 @@
 {% block content %}
 
 <div class="row row-flex centre-elem">
-    {% for issue in issues %}
-        <div class="col-xs-9 display panel panel-default issue-bgd">
-            <div class="panel-body">
-                <div class="col-md-2 col-sm-3 text-center">
-                    <a class="story-img" href="#">
-                        <img src="/media/img/profile.jpg" class="img-circle">
-                    </a>
-                    <p><span class="boldtext">Author:</span> Billbob</p>
+	{% for issue in issues %}
+	<div class="card col-xs-9 issue-bgd">
+		<div class="card-header centre-elem">
+			{% if issue.issue_type == "Bug" %}
+			    <i class="fas fa-bug"> {{ issue.name }}</i>
+			{% else %}
+			    <i class="fas fa-check-double"> {{ issue.name }}</i>
+			{% endif %}
+		</div>
+		<div class="card-body">
+			<h5 class="card-title description">Description: {{ issue.description|truncatewords:30 }}</h5>
+			<div class="row centre-elem dev-item-stle">
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    {% if issue.status == "Draft" %}
+                        <p class="boldtext card-text"><span class="draft-bgd">{{ issue.status }}</span></p>
+                    {% elif issue.status == "ToDo" %}
+                        <p class="boldtext card-text"><span class="todo-bgd">{{ issue.status }}</span></p>
+                    {% elif issue.status == "InDevelopment" %}
+                        <p class="boldtext card-text"><span class="indev-bgd">{{ issue.status }}</span></p>
+                    {% elif issue.status == "Fixed" %}
+                        <p class="boldtext card-text"><span class="fixed-bgd">{{ issue.status }}</span></p>
+                    {% elif issue.status == "InTest" %}
+                        <p class="boldtext card-text"><span class="intest-bgd">{{ issue.status }}</span></p>
+                    {% elif issue.status == "Done" %}
+                        <p class="boldtext card-text"><span class="done-bgd">{{ issue.status }}</span></p>
+                    {% else %}
+                        <p class="boldtext card-text"><span class="draft-bgd">Issue: {{ issue.status }}</span></p>
+                    {% endif %}
                 </div>
-                
-                <div class="col-md-10 col-sm-9">
-                
-                    <h3>{{ issue.name }}</h3>
-                    <div class="row">
-                        <div class="col-xs-9">
-                            <p>Description: {{ issue.description|truncatewords:30 }}</p>
-                            <p class="boldtext">Status:{{ issue.status }}</p>
-                            <p><a href="{% url 'issue_detail' issue.id %}"  class="btn btn-default">Read more</a></p>
-                            <p><span class="boldtext">Created on:</span> {{ issue.published_date }} </p>
-                            <p class="issue-description">Issue Type:{{ issue.issue_type }}</p>
-                            <p><span class="boldtext">Views:</span> {{issue.views}}</p>
-                            <p><span class="boldtext">Votes:</span> {{issue.votes}}</p>
-                        </div>
-                    </div>        
-                </div>   
-            </div>
-        </div>
-    {% endfor %}
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <p class="card-text"><span class="boldtext">Created on:</span> {{ issue.published_date }} </p>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <i class="far fa-eye"> {{ issue.views }}</i>
+                </div>
+			</div>
+		</div>
+		<div class="card-footer text-center">
+			<p class="card-text">
+				<a href="{% url 'issue_detail' issue.id %}" class="btn btn-default">Details</a>
+			</p>
+			
+		</div>
+	</div>
+	{% endfor %}
 </div>
 
 {% endblock %}

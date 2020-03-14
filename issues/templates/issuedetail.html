@@ -70,7 +70,11 @@
                 {% if issue.issue_type == "Bug" %}
                     <p><strong>Vote for me.</strong> The Bug with most votes is fixed first!!</p>
                 {% else %}
-                <p><strong>Vote for me.</strong> {{ issue.issue_votes_required }} votes needed for development to begin. Vote now to have this feature added</p>
+                    {% if issue.votes < 100 %}
+                        <p><strong>Vote Now!.</strong> I have {{ issue.votes }} of the 100 votes needed for development to begin. Help get me a step closer to development by voting now</p>
+                     {% else %}
+                        <p><strong>Vote Suspended</strong> I have reached my voting goal and develpment will begin</p>
+                     {% endif %}       
                 {% endif %}
             </div>
         </div>
@@ -92,8 +96,17 @@
 		<div class="row centre-elem">
 			<a href="{% url 'issues' %}" class="btn btn-default">Back to Issues</a>
 			<a href="{% url 'edit_issue' issue.id %}" class="btn btn-default">Edit Issue</a>
+            <a href="{% url 'add_comment' issue.id %}" class="btn btn-default">Add Comment</a>
 		</div>
+        <div class="row">
+            <p>Comment:</p> 
+                {% for comment in issue.comments.all %}
+                    <p>Created:{{ comment.comment_date }}</p>
+                    <p>Comment:{{ comment.body }}</p>
+                {% endfor %}
+        </div>
 	</div>
+    
 </div>
 
 {% endblock %}
