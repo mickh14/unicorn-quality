@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from .models import Issue, Comment
-from .forms import IssueForm, CommentForm
+from .forms import IssueForm, CommentForm, DoneForm
 
 # Create your views here.
 def all_issues(request):
@@ -74,3 +74,19 @@ def add_comment(request, pk):
     else:
         form = CommentForm(instance=issue)
     return render(request, 'commentform.html', {'form': form})
+
+
+def pass_test(request, pk):
+    """
+    Create a view that allows us to enter details RCA and resolution for fixed/ developed issue
+    """
+    issue = get_object_or_404(Issue, pk=pk)
+    if request.method == "POST":
+        issue.status = "Done"
+        form = DoneForm(request.POST, request.FILES, instance=issue)
+        if form.is_valid():
+            issue = form.save()
+            return redirect(issue_detail, issue.pk)
+    else:
+        form = DoneForm(instance=issue)
+    return render(request, 'doneform.html', {'form': form})

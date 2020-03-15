@@ -60,24 +60,47 @@
                     <div class="col-sm-12 col-md-12 col-lg-6">
 				        <p><strong>Actual Results:</strong></br>{{ issue.actual_Results }}</p>
                     </div>
-				</div>        
+				</div>
+                {% if issue.status == "Done" %}
+                <div class="row">
+			        <div class="col-sm-12 col-md-12 col-lg-6">
+                        <p><strong>Root Cause:</strong></br>{{ issue.root_cause }}</p>
+			        </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+				        <p><strong>Resolution:</strong></br>{{ issue.resolution }}</p>
+                    </div>
+				</div> 
+                {% else %}
+                <div>
+                </div>
+                {% endif %}     
 				    <p><span class="boldtext"><strong></br>Created on:</strong></span> {{ issue.published_date }} </p>
 
 			</div>
 		</div>
-        <div class="">
+        {% if issue.status == "InTest" %}
             <div class="">
-                {% if issue.issue_type == "Bug" %}
-                    <p><strong>Vote for me.</strong> The Bug with most votes is fixed first!!</p>
-                {% else %}
-                    {% if issue.votes < 100 %}
-                        <p><strong>Vote Now!.</strong> I have {{ issue.votes }} of the 100 votes needed for development to begin. Help get me a step closer to development by voting now</p>
-                     {% else %}
-                        <p><strong>Vote Suspended</strong> I have reached my voting goal and develpment will begin</p>
-                     {% endif %}       
-                {% endif %}
+                <a href="{% url 'pass_test' issue.id %}" class="btn btn-default">Passed</a>
             </div>
+        {% else %}
+            <div class="">
+                <div class="">
+                    {% if issue.issue_type == "Bug" %}
+                        <p><strong>Vote for me.</strong> The Bug with most votes is fixed first!!</p>
+                    {% else %}
+                        {% if issue.votes < 100 %}
+                            <p><strong>Vote Now!.</strong> I have {{ issue.votes }} of the 100 votes needed for development to begin. Help get me a step closer to development by voting now</p>
+                        {% else %}
+                            <p><strong>Vote Suspended</strong> I have reached my voting goal and develpment will begin</p>
+                        {% endif %}       
+                    {% endif %}      
+                </div>
+            </div>
+        {% endif %}
+        {% if issue.status == "Done" %}
+        <div>
         </div>
+        {% else %}
         <div class="card-footer text-center">
 			{% if issue.issue_type == "Bug" %}
 				<a href="{% url 'increment_vote' issue.id %}" class="btn btn-success">Vote</a></p>
@@ -93,6 +116,7 @@
 			</form>
 			{% endif %}
 		</div>
+        {% endif %}
 		<div class="row centre-elem">
 			<a href="{% url 'issues' %}" class="btn btn-default">Back to Issues</a>
 			<a href="{% url 'edit_issue' issue.id %}" class="btn btn-default">Edit Issue</a>

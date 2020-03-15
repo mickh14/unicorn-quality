@@ -12,3 +12,9 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body', 'comment_date')
+
+
+class DoneForm(forms.ModelForm):
+    class Meta:
+        model = Issue
+        fields = ('root_cause', 'resolution')

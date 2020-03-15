@@ -23,7 +23,6 @@ class Issue(models.Model):
         ('InDevelopment', 'InDevelopment'),
         ('Fixed', 'Fixed'),
         ('InTest', 'InTest'),
-        ('Done', 'Done'),
     )
     status = models.CharField(max_length=30, blank=True, null=False, choices=status_option)
     views = models.IntegerField(default=0)
@@ -31,6 +30,8 @@ class Issue(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2, default='5')
     name = models.CharField(max_length=254, default='')
     votes_required = models.IntegerField(default='100')
+    root_cause = models.TextField(max_length=500, default='')
+    resolution = models.TextField(max_length=500, default='')
     
     def __str__(self):
         return self.name

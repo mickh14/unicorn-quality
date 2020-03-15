@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% block content %}
+    <div class="centre-elem">
+        <h1>Done</h1>
+    </div>    
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form | as_bootstrap }}
+        <button type="submit" class="btn btn-info centre-elem">Save</button>
+    </form>
+{% endblock %}
