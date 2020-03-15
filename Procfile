@@ -1,1 +1,1 @@
-web: gunicorn unicornquality.wsgi:application STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+web: gunicorn unicornquality.wsgi:application
