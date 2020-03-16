@@ -1,84 +1,92 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row row-flex centre-elem">
-	{% for issue in issues %}
+
+{% for issue in issues %}
+<div class="accordion centre-elem" id="accordionExample">
 	<div class="card col-xs-9 issue-bgd">
 		<div class="card-header centre-elem">
 			{% if issue.issue_type == "Bug" %}
-			    <i class="fas fa-bug"> {{ issue.name }}</i>
+			<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fas fa-bug"> {{ issue.name }}</i>
+                </button>
 			{% else %}
-			    <i class="fas fa-check-double"> {{ issue.name }}</i>
+			<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+			        <i class="fas fa-check-double"> {{ issue.name }}</i>
+                </button>
 			{% endif %}
 		</div>
-		<div class="card-body">
-			<h5 class="card-title description">Description: {{ issue.description|truncatewords:30 }}</h5>
-			<div class="row centre-elem">
-                {% if issue.status == "Draft" %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <p class="boldtext card-text"><span class="draft-bgd">{{ issue.status }}</span></p>
-                    </div>
-                {% elif issue.status == "ToDo" %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <p class="boldtext card-text"><span class="todo-bgd">{{ issue.status }}</span></p>
-                    </div>   
-                {% elif issue.status == "InDevelopment" %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <p class="boldtext card-text"><span class="indev-bgd">{{ issue.status }}</span></p>
-                    </div> 
-                {% elif issue.status == "Fixed" %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <p class="boldtext card-text"><span class="fixed-bgd">{{ issue.status }}</span></p>
-                    </div> 
-                {% elif issue.status == "InTest" %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <p class="boldtext card-text"><span class="intest-bgd">{{ issue.status }}</span></p>
-                    </div> 
-                {% elif issue.status == "Done" %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <p class="boldtext card-text"><span class="done-bgd">{{ issue.status }}</span></p>
-                    </div>         
+		<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+			<div class="card-body">
+				<h5 class="card-title description">Description: {{ issue.description|truncatewords:30 }}</h5>
+				<div class="row centre-elem">
+					{% if issue.status == "Draft" %}
+					<div class="col-sm-12 col-md-6 col-lg-4">
+						<p class="boldtext card-text"><span class="draft-bgd">{{ issue.status }}</span></p>
+					</div>
+					{% elif issue.status == "ToDo" %}
+					<div class="col-sm-12 col-md-6 col-lg-4">
+						<p class="boldtext card-text"><span class="todo-bgd">{{ issue.status }}</span></p>
+					</div>
+					{% elif issue.status == "InDevelopment" %}
+					<div class="col-sm-12 col-md-6 col-lg-4">
+						<p class="boldtext card-text"><span class="indev-bgd">{{ issue.status }}</span></p>
+					</div>
+					{% elif issue.status == "Fixed" %}
+					<div class="col-sm-12 col-md-6 col-lg-4">
+						<p class="boldtext card-text"><span class="fixed-bgd">{{ issue.status }}</span></p>
+					</div>
+					{% elif issue.status == "InTest" %}
+					<div class="col-sm-12 col-md-6 col-lg-4">
+						<p class="boldtext card-text"><span class="intest-bgd">{{ issue.status }}</span></p>
+					</div>
+					{% elif issue.status == "Done" %}
+					<div class="col-sm-12 col-md-6 col-lg-4">
+						<p class="boldtext card-text"><span class="done-bgd">{{ issue.status }}</span></p>
+					</div>
 
-                {% else %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <p class="boldtext card-text"><span class="draft-bgd">Issue: {{ issue.status }}</span></p>
-                    </div>
-                {% endif %}
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <p class="card-text"><span class="boldtext">Created on:</span> {{ issue.published_date }} </p>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <p class="issue-description card-text">Issue Type:{{ issue.issue_type }}</p>
-                </div>
-			</div>
-            <div class="row icon">
-                <div class="col-sm-12 col-md-6 col-lg-6 text-center">
-                    <i class="far fa-eye"> {{ issue.views }}</i>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-6 text-center">
-                    <i class="fas fa-thumbs-up"> {{ issue.votes }}</i>
-                </div>    
-            </div>
-		</div>
-		<div class="card-footer text-center">
-			<p class="card-text">
-				<a href="{% url 'issue_detail' issue.id %}" class="btn btn-default">Details</a>
-				{% if issue.issue_type == "Bug" %}
-				<a href="{% url 'increment_vote' issue.id %}" class="btn btn-success">Vote</a></p>
-			{% else %}
-			<form method="post" action="{% url 'add_to_cart' issue.id %}">
-				{% csrf_token %}
-				<div class="input-group form-style">
-					<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Number of Votes">
-					<span class="input-group-btn">
+					{% else %}
+					<div class="col-sm-12 col-md-6 col-lg-4">
+						<p class="boldtext card-text"><span class="draft-bgd">Issue: {{ issue.status }}</span></p>
+					</div>
+					{% endif %}
+					<div class="col-sm-12 col-md-6 col-lg-4">
+						<p class="card-text"><span class="boldtext">Created on:</span> {{ issue.published_date }} </p>
+					</div>
+					<div class="col-sm-12 col-md-6 col-lg-4">
+						<p class="issue-description card-text">Issue Type:{{ issue.issue_type }}</p>
+					</div>
+				</div>
+				<div class="row icon">
+					<div class="col-sm-12 col-md-6 col-lg-6 text-center">
+						<i class="far fa-eye"> {{ issue.views }}</i>
+					</div>
+					<div class="col-sm-12 col-md-6 col-lg-6 text-center">
+						<i class="fas fa-thumbs-up"> {{ issue.votes }}</i>
+					</div>
+				</div>
+				<div class="card-footer text-center">
+					<p class="card-text">
+						<a href="{% url 'issue_detail' issue.id %}" class="btn btn-default">Details</a>
+						{% if issue.issue_type == "Bug" %}
+						<a href="{% url 'increment_vote' issue.id %}" class="btn btn-success">Vote</a></p>
+					{% else %}
+					<form method="post" action="{% url 'add_to_cart' issue.id %}">
+						{% csrf_token %}
+						<div class="input-group form-style">
+							<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Number of Votes">
+							<span class="input-group-btn">
                         <button class="btn btn-success" type="submit">Vote</button>
                     </span>
+						</div>
+					</form>
+					{% endif %}
 				</div>
-			</form>
-			{% endif %}
+			</div>
 		</div>
 	</div>
-	{% endfor %}
 </div>
+{% endfor %}
+
 
 {% endblock %}
