@@ -6,10 +6,10 @@
 
 {% block content %}
 
-<div class="container-fluid detail-profile-wrapper">
+<div class="container-fluid issue_detail-wrapper">
 	<div class="row">
 		<div class="col content-area">
-			<div class="container detail-profile mx-auto">
+			<div class="container detail-main mx-auto">
 				<div class="header-content row d-flex">
 					<div class="col-12 centre-elem">
 						{% if issue.issue_type == "Bug" %}
@@ -20,7 +20,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-12 col-md-4 col-lg-4 border">
+					<div class="col-sm-12 col-md-4 col-lg-4 border first-column">
 						<div class="justify-content-center">
 							<div class="row centre-elem">
 								{% if issue.status == "Draft" %}
@@ -97,7 +97,7 @@
 						</div>
 					</div>
 
-				    <div class="col-sm-12 col-md-8 col-lg-8">
+				    <div class="col-sm-12 col-md-8 col-lg-8 second-column">
 					<div class="container justify-content-center">
 						<div class="row">
 							<div class="col">

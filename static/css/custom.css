@@ -74,8 +74,8 @@ footer {
 
 /*--------custom Issue Detail---------*/
 
-.detail-profile-wrapper .favorite .fa,
-.detail-profile-wrapper .favorited .fa{
+
+.issue_detail-wrapper .favorited .fa{
   font-size: 2.4em;
 }
 
@@ -83,24 +83,15 @@ footer {
   margin-top: 80px;
 }
 
-.content-area h2 {
-  margin-top: 0px;
-  margin-left: 20px;
-}
 
-.detail-profile .second-column {
-
+.second-column {
   padding: 0px 45px;
-
-}
-
-.detail-profile .first-column,
-.detail-profile .second-column {
   margin-top: 40px;
 }
 
 
-.detail-profile .header-content {
+
+.detail-main .header-content {
   background-color: #78b39c;
   color: white;
   height: 70px;
@@ -109,20 +100,15 @@ footer {
 
 }
 
-.detail-profile {
-  background-color: #ffffff;
+.detail-main {
+  background-color: #f7e8dd;
   margin-bottom: 50px;
   margin-top: -20px;
   border-radius: 25px;
 }
 
-.detail-profile h2 {
 
-  font-size: 2em;
-
-}
-
-.detail-profile .shape {
+.detail-main .shape {
   border-radius: 0px;
   display: inline;
   height: 60px;
@@ -133,30 +119,21 @@ footer {
   margin: 30px;
 }
 
-.detail-profile .shape img {
+.detail-main .shape img {
   width: 45px;
   margin-top: 5px;
 }
 
-.detail-profile .shape h3 {
-  font-size: 17px;
-  display: inline;
-  float: right;
-  margin-top: 15px;
-}
 
 .border {
      border-right: 1px solid black;
 }
 
 @media (min-width: 992px) {
-  .detail-profile .second-column {
+  .detail-main .second-column {
     padding: 0px 65px 0px 0px;
   }
-  .detail-profile h2 {
-    font-size: 4em;
-  }
-}
+
 
 /*--------customer Style---------*/
 
