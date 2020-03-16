@@ -3,7 +3,7 @@
 body {
     font-family: Arial;
     padding-top: 100px;
-    color: white;
+    color: black;
 }
 
 footer {
@@ -21,7 +21,7 @@ footer {
 }
 
 .issue-bgd {
-    background-color: #3f51b5b8;
+    background-color: rgba(96, 125, 139, 0.81);
     margin-top: 10px;
     padding-top: 10px;
     border: 1px solid #ededed;
@@ -70,6 +70,92 @@ footer {
     justify-content: center;
     position: relative; 
 
+}
+
+/*--------custom Issue Detail---------*/
+
+.detail-profile-wrapper .favorite .fa,
+.detail-profile-wrapper .favorited .fa{
+  font-size: 2.4em;
+}
+
+.content-area {
+  margin-top: 80px;
+}
+
+.content-area h2 {
+  margin-top: 0px;
+  margin-left: 20px;
+}
+
+.detail-profile .second-column {
+
+  padding: 0px 45px;
+
+}
+
+.detail-profile .first-column,
+.detail-profile .second-column {
+  margin-top: 40px;
+}
+
+
+.detail-profile .header-content {
+  background-color: #78b39c;
+  color: white;
+  height: 70px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+
+}
+
+.detail-profile {
+  background-color: #ffffff;
+  margin-bottom: 50px;
+  margin-top: -20px;
+  border-radius: 25px;
+}
+
+.detail-profile h2 {
+
+  font-size: 2em;
+
+}
+
+.detail-profile .shape {
+  border-radius: 0px;
+  display: inline;
+  height: 60px;
+  max-width: 180px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #ffffff;
+  margin: 30px;
+}
+
+.detail-profile .shape img {
+  width: 45px;
+  margin-top: 5px;
+}
+
+.detail-profile .shape h3 {
+  font-size: 17px;
+  display: inline;
+  float: right;
+  margin-top: 15px;
+}
+
+.border {
+     border-right: 1px solid black;
+}
+
+@media (min-width: 992px) {
+  .detail-profile .second-column {
+    padding: 0px 65px 0px 0px;
+  }
+  .detail-profile h2 {
+    font-size: 4em;
+  }
 }
 
 /*--------customer Style---------*/
