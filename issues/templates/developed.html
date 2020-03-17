@@ -12,32 +12,27 @@
 			{% endif %}
 		</div>
 		<div class="card-body">
-			<h5 class="card-title description">Description: {{ issue.description|truncatewords:30 }}</h5>
-			<div class="row centre-elem dev-item-stle">
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    {% if issue.status == "Draft" %}
-                        <p class="boldtext card-text"><span class="draft-bgd">{{ issue.status }}</span></p>
-                    {% elif issue.status == "ToDo" %}
-                        <p class="boldtext card-text"><span class="todo-bgd">{{ issue.status }}</span></p>
-                    {% elif issue.status == "InDevelopment" %}
-                        <p class="boldtext card-text"><span class="indev-bgd">{{ issue.status }}</span></p>
-                    {% elif issue.status == "Fixed" %}
-                        <p class="boldtext card-text"><span class="fixed-bgd">{{ issue.status }}</span></p>
-                    {% elif issue.status == "InTest" %}
-                        <p class="boldtext card-text"><span class="intest-bgd">{{ issue.status }}</span></p>
-                    {% elif issue.status == "Done" %}
-                        <p class="boldtext card-text"><span class="done-bgd">{{ issue.status }}</span></p>
-                    {% else %}
-                        <p class="boldtext card-text"><span class="draft-bgd">Issue: {{ issue.status }}</span></p>
-                    {% endif %}
+			<h5 class="card-title description">Description: {{ issue.description }}</h5>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <dl>
+						<dt>Root Cause</dt>
+						<dd>
+							<p class="text-justify">{{ issue.root_cause }}</p>
+						</dd>
+					</dl>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <p class="card-text"><span class="boldtext">Created on:</span> {{ issue.published_date }} </p>
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <dl>
+						<dt>Resolution</dt>
+						<dd>
+							<p class="text-justify">{{ issue.resolution }}</p>
+						</dd>
+					</dl>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <i class="far fa-eye"> {{ issue.views }}</i>
-                </div>
-			</div>
+            </div>
+			
 		</div>
 		<div class="card-footer text-center">
 			<p class="card-text">

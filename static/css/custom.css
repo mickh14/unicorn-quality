@@ -21,7 +21,8 @@ footer {
 }
 
 .issue-bgd {
-    background-color: rgba(96, 125, 139, 0.81);
+    background-color: #f7e8dd;
+    color: black;
     margin-top: 10px;
     padding-top: 10px;
     border: 1px solid #ededed;
@@ -72,6 +73,12 @@ footer {
 
 }
 
+/*--------custom Issue---------*/
+
+.issue-head {
+    font-size: 25px;
+}
+
 /*--------custom Issue Detail---------*/
 
 
@@ -108,7 +115,7 @@ footer {
 }
 
 
-.detail-main .shape {
+.shape {
   border-radius: 0px;
   display: inline;
   height: 60px;
@@ -119,11 +126,10 @@ footer {
   margin: 30px;
 }
 
-.detail-main .shape img {
-  width: 45px;
-  margin-top: 5px;
+.detail-btn {
+    padding: 10px;
+    display: inline;
 }
-
 
 .border {
      border-right: 1px solid black;
@@ -147,9 +153,6 @@ footer {
     margin-left: 10px;
 }
 
-i {
-    font-size: 30px;
-}
 
 .status-style {
     font-size: 30px;
@@ -158,6 +161,7 @@ i {
 .icon {
     padding: 10px;
     margin: 10px;
+    font-size: 30px;
 }
 
 .dev-item-stle {
@@ -211,7 +215,7 @@ i {
 }
 
 .description {
-    color: white;
+    color: black;
 }
 
 .form-style {

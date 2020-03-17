@@ -11,7 +11,7 @@
 		<div class="col content-area">
 			<div class="container detail-main mx-auto">
 				<div class="header-content row d-flex">
-					<div class="col-12 centre-elem">
+					<div class="col-12 centre-elem issue-head">
 						{% if issue.issue_type == "Bug" %}
 						<i class="fas fa-bug"> {{ issue.name }}</i>
 						{% else %}
@@ -20,7 +20,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-12 col-md-4 col-lg-4 border first-column">
+					<div class="col-sm-12 col-md-4 col-lg-4 border">
 						<div class="justify-content-center">
 							<div class="row centre-elem">
 								{% if issue.status == "Draft" %}
@@ -40,16 +40,16 @@
 									<span class="draft-bgd status-style">Issue: {{ issue.status }}</span></p>
 								{% endif %}
 							</div>
-							<div class="row">
-								<div class="col-sm-12 col-md-6 col-lg-6 text-center">
+							<div class="row icon">
+								<div class="col-sm-6 col-md-6 col-lg-6 text-center">
 									<i class="far fa-eye"> {{ issue.views }}</i>
 								</div>
-								<div class="col-sm-12 col-md-6 col-lg-6 text-center">
+								<div class="col-sm-6 col-md-6 col-lg-6 text-center">
 									<i class="fas fa-thumbs-up"> {{ issue.votes }}</i>
 								</div>
 							</div>
 							{% if issue.status == "InTest" %}
-							<div class="">
+							<div class="centre-elem">
 								<a href="{% url 'pass_test' issue.id %}" class="btn btn-default">Passed</a>
 							</div>
 							{% else %}
@@ -59,9 +59,12 @@
 									<p><strong>Vote for me.</strong> The Bug with most votes is fixed first!!</p>
 									{% else %}
 									{% if issue.votes < 100 %}
-									<p><strong>Vote Now!.</strong> I have {{ issue.votes }} of the 100 votes needed
-										for development to begin. Help get me a step closer to development by voting
-										now</p>
+									<p><strong>Vote Now!</strong> I have {{ issue.votes }} of the 100 votes needed</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" data-progress="80%">
+
+                                        </div>
+                                    </div>
 									{% else %}
 									<p><strong>Vote Suspended</strong> I have reached my voting goal and develpment
 										will begin</p>
@@ -69,7 +72,7 @@
 									{% endif %}
 								</div>
 							</div>
-							{% endif %}
+							
 							{% if issue.status == "Done" %}
 							<div>
 							</div>
@@ -90,6 +93,7 @@
 								{% endif %}
 							</div>
 							{% endif %}
+                            {% endif %}    
 							<div class="row">
 								<p><span class="boldtext"><strong>Created on:</strong></span>
 									{{ issue.published_date }} </p>
@@ -152,16 +156,16 @@
 				    </div>
                 </div>
                 <div class="row justify-content-center">
-				<div class="col-sm-12 col-md-5 shape shadow2">
-					<a href="{% url 'issues' %}" class="btn btn-default">Back to Issues</a>
-				</div>
-				<div class="col-sm-12 col-md-5 shape shadow3">
-					<a href="{% url 'edit_issue' issue.id %}" class="btn btn-default">Edit Issue</a>
-				</div>
-				<div class="col-sm-12 col-md-5 shape shadow3">
-					<a href="{% url 'add_comment' issue.id %}" class="btn btn-default">Add Comment</a>
-				</div>
-			</div>  
+                    <div class="col-sm-12 col-md-4 col-lg-4 detail-btn">
+                        <a href="{% url 'issues' %}" class="btn btn-default">Back to Issues</a>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 detail-btn">
+                        <a href="{% url 'edit_issue' issue.id %}" class="btn btn-default">Edit Issue</a>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 detail-btn">
+                        <a href="{% url 'add_comment' issue.id %}" class="btn btn-default">Add Comment</a>
+                    </div>
+			    </div>  
 			</div>
 		</div>
 	</div>
