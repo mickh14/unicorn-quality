@@ -61,7 +61,7 @@
 									{% if issue.votes < 100 %}
 									<p><strong>Vote Now!</strong> I have {{ issue.votes }} of the 100 votes needed</p>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" data-progress="80%">
+                                        <div class="progress-bar" role="progressbar" data-progress="{{ issue.votes }}%">
 
                                         </div>
                                     </div>
