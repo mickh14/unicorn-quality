@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 # Model for capturing components of an issue
 class Issue(models.Model):
     name = models.CharField(max_length=254, default='')

@@ -73,6 +73,7 @@ footer {
 
 }
 
+
 /*--------custom Issue---------*/
 
 .issue-head {
@@ -128,17 +129,10 @@ footer {
 
 .detail-btn {
     padding: 10px;
-    display: inline;
 }
 
-.border {
-     border-right: 1px solid black;
-}
 
-@media (min-width: 992px) {
-  .detail-main .second-column {
-    padding: 0px 65px 0px 0px;
-  }
+
 
 
 /*--------customer Style---------*/
@@ -163,6 +157,8 @@ footer {
     margin: 10px;
     font-size: 30px;
 }
+
+/*--------////customer Style---------*/
 
 .dev-item-stle {
     font-size: 20px;
@@ -214,9 +210,6 @@ footer {
     margin: 10px;
 }
 
-.description {
-    color: black;
-}
 
 .form-style {
     margin: 10px;
