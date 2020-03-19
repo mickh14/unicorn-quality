@@ -17,7 +17,7 @@
 </head>
 <body>
     <!-- Fixed masthead -->
-    <nav class="navbar navbar-masthead navbar-default navbar-fixed-top">
+    <nav class="navbar-cust navbar-masthead bg-light navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -39,14 +39,14 @@
                                 <a class="dropdown-item" href="{% url 'bug_done' %}">Bug</a>
                             </div>
                         </li>
-                        <li><a href="{% url 'new_issue' %}"><i class="fas fa-plus"></i>New Issue</a></li>
+                        <li><a href="{% url 'new_issue' %}"><i class="fas fa-plus"></i> New Issue</a></li>
                         
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i>Profile</a></li>
-                        <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
+                        <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a></li>
+                        <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
                     {%  else %}
-                        <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i>Register</a></li>
-                        <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i>Log In</a></li>
+                        <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
+                        <li><a href="{% url 'login' %}"><i class="fas fa-sign-in"></i> Log In</a></li>
                     {% endif %}
                     <li>
                         <a href="{% url 'view_cart' %}">
@@ -68,26 +68,31 @@
                 {% endfor %}
             </div>
         </div>
-    {% endif %}
-    <div class="container main_bgd">
-        <div class="search-style centre-elem">
-            
-                <form action="{% url 'search' %}" method="get">
-                    <input class="search-field"    type="text" name="q">
-                    <button class="btn btn-info" type="search">Search</button>
-                </form>
-               
-                <form action="{% url 'issue_filter' %}" method="get">                
-                    <select  class="search-field" id="issue_type" name="b">
-                        <option value="bug">Bug</option>
-                        <option value="feature">Feature</option>
-                    </select>
-                    <button class="btn btn-info" type="search">Search</button>
-                </form>
-            
-        </div>    
-        {% block content %} {% endblock %}
+    {% else %}
+    <div>
     </div>
+    {% endif %}
+        
+        <div class="main_bgd">
+            <div class="search-style centre-elem">
+                
+                    <form action="{% url 'search' %}" method="get">
+                        <input class="search-field"    type="text" name="q">
+                        <button class="btn btn-info" type="search">Search</button>
+                    </form>
+                
+                    <form action="{% url 'issue_filter' %}" method="get">                
+                        <select  class="search-field" id="issue_type" name="b">
+                            <option value="bug">Bug</option>
+                            <option value="feature">Feature</option>
+                        </select>
+                        <button class="btn btn-info" type="search">Search</button>
+                    </form>
+                
+            </div>    
+            {% block content %} {% endblock %}
+        </div>
+    
     <footer>
         <div class="container">
             <p>UnicornAttractor Issue Tracker</p>

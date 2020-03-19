@@ -16,6 +16,12 @@ footer {
 
 
 /*--------background Style---------*/
+
+.navbar-cust {
+    background-color: #f7e8dd;
+}
+
+
 .base-bgd {
     background-color: lightgray;
 }
@@ -30,35 +36,50 @@ footer {
 
 /*--------background status-text---------*/
 .draft-bgd {
-    background-color: orange;
-    color: white;
+    background-color: #f0f8ff;
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
 }
 
 .todo-bgd {
-    background-color: green;
-    color: white;
+    background-color: #edf1fe;
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 8px;
 }
 
 .indev-bgd {
-    background-color: blue;
-    color: white;
+    background-color: #d8e8e6;
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 8px;
 }
 
 .fixed-bgd {
-    background-color: purple;
-    color: white;
+    background-color: #e5edf1;
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 8px;
 }
 
 .intest-bgd {
-    background-color: red;
-    color: white;
+    background-color: #a1d7c9;
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 8px;
 }
 
 .done-bgd {
-    background-color: black;
-    color: white;
-    border: 10px;
-    border-color: white;
+    background-color: #f4e8d1;
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 8px;
 }
 
 .main_bgd{
@@ -88,7 +109,7 @@ footer {
 }
 
 .content-area {
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 
@@ -100,9 +121,9 @@ footer {
 
 
 .detail-main .header-content {
-  background-color: #78b39c;
+  background-color: #efc5b5;
   color: white;
-  height: 70px;
+  height: 40px;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
 
@@ -155,7 +176,7 @@ footer {
 .icon {
     padding: 10px;
     margin: 10px;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 /*--------////customer Style---------*/

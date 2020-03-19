@@ -24,8 +24,7 @@ def checkout(request):
             order.save()
 
             cart = request.session.get('cart', {})
-            total = 0
-            import pdb;pdb.set_trace()
+            total = 0          
             for id, quantity in cart.items():
                 issue = get_object_or_404(Issue, pk=id)
                 total += quantity * issue.price
