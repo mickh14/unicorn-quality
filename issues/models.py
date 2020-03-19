@@ -9,6 +9,7 @@ from django.contrib.auth.models import User
 # Model for capturing components of an issue
 class Issue(models.Model):
     name = models.CharField(max_length=254, default='')
+    author = models.ForeignKey(User, default=None)
     description = models.TextField()
     step_to_Reproduce = models.TextField(max_length=1000, default='')
     expected_Results = models.TextField(max_length=500, default='')

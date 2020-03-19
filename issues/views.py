@@ -52,7 +52,9 @@ def create_or_edit_issue(request, pk=None):
     if request.method == "POST":
         form = IssueForm(request.POST, request.FILES, instance=issue)
         if form.is_valid():
-            issue = form.save()
+            issue = form.save(commit=False)
+            issue.author =request.user
+            issue.save()
             return redirect(issue_detail, issue.pk)
     else:
         form = IssueForm(instance=issue)
