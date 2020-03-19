@@ -95,10 +95,9 @@
 							{% endif %}
                             {% endif %}    
 							<div class="row">
-								<p><span class="boldtext"><strong>Created on:</strong></span>
-									{{ issue.published_date }} </p>
-                                <p><span class="boldtext"><strong>Created by:</strong></span>
-									{{ issue.author }} </p>    
+								
+                                <p><small><span class="boldtext"><strong>Created by:</strong></span>
+									{{ issue.author }} on {{ issue.published_date }}</small></p>    
 							</div>
 						</div>
 					</div>
