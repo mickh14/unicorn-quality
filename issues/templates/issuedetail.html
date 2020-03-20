@@ -166,8 +166,24 @@
                     <div class="col-sm-12 col-md-4 col-lg-4 detail-btn">
                         <a href="{% url 'add_comment' issue.id %}" class="btn btn-dark">Add Comment</a>
                     </div>
-			    </div>  
-			</div>
+			    </div>
+                <hr>
+                <div class="container comment-style">
+                    <h3 class="text-center">Reviews</h3> 
+                    <div class="row centre-elem">  
+                        {% for comment in comments %}
+                    
+                            <p>Summary:{{ comment.name }}</p>
+                            <p>Comment:{{ comment.body }}</p>
+                            <p>Author: {{ comment.author }}</p>
+                            <p>Created: {{ comment.comment_date }}</p>
+                    
+                        {% empty %}
+                            <p>There are no comments</p>
+                        {% endfor %} 
+                    </div>    
+                </div>
+            
 		</div>
 	</div>
 </div>

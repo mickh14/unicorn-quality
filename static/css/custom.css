@@ -34,6 +34,12 @@ footer {
     border: 1px solid #ededed;
 }
 
+.comment-style{
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
 /*--------background status-text---------*/
 .draft-bgd {
     background-color: #f0f8ff;

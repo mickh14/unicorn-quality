@@ -35,13 +35,19 @@ class Issue(models.Model):
     votes_required = models.IntegerField(default='100')
     root_cause = models.TextField(max_length=500, default='')
     resolution = models.TextField(max_length=500, default='')
-    
+   
     def __str__(self):
         return self.name
 
 
 # Model for capturing components of an comment
 class Comment(models.Model):
-    Issue = models.ForeignKey(Issue, null=False)
+    name = models.CharField(max_length=254, default='')
+    issue = models.ForeignKey(Issue, null=False)
+    author = models.ForeignKey(User, default=None)
     body = models.TextField(max_length=1000, default='')
     comment_date = models.DateField(blank=True, null=True, default=timezone.now)
+    approved = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name

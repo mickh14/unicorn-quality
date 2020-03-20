@@ -5,14 +5,17 @@ from django.utils import timezone
 from .models import Issue, Comment
 from .forms import IssueForm, CommentForm, DoneForm
 
+
 # Create your views here.
 def all_issues(request):
     issues = Issue.objects.all()
     return render(request, "issues.html", {"issues": issues})
 
+
 def all_bugs(request):
     bugs = Issue.objects.filter(issue_type__icontains="Bug")
     return render(request, "bugs.html", {"bugs": bugs})
+
 
 def issue_detail(request, pk):
     """
@@ -25,7 +28,14 @@ def issue_detail(request, pk):
     issue = get_object_or_404(Issue, pk=pk)
     issue.views += 1
     issue.save()
-    return render(request, "issuedetail.html", {'issue': issue})
+
+    # The comments section will be sorted by date descending.
+
+    comments = Comment.objects.filter(issue__id=pk).order_by('-comment_date')
+
+    return render(request, "issuedetail.html", 
+                {'issue': issue,
+                'comments': comments})
 
 def increment_vote(request, pk):
     """
@@ -53,7 +63,7 @@ def create_or_edit_issue(request, pk=None):
         form = IssueForm(request.POST, request.FILES, instance=issue)
         if form.is_valid():
             issue = form.save(commit=False)
-            issue.author =request.user
+            issue.author = request.user
             issue.save()
             return redirect(issue_detail, issue.pk)
     else:
@@ -68,9 +78,11 @@ def add_comment(request, pk):
     """
     issue = get_object_or_404(Issue, pk=pk)
     if request.method == "POST":
-        form = CommentForm(request.POST, request.FILES, instance=issue)
+        form = CommentForm(request.POST)
+
         if form.is_valid():
             comment = form.save(commit=False)
+            comment.author = request.user
             comment.issue = issue
             comment.save()
             return redirect(issue_detail, issue.pk)
