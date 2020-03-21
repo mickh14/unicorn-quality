@@ -181,8 +181,12 @@ footer {
     margin-bottom: 10px;
     margin-right: 10px;
     margin-left: 10px;
+    word-wrap:break-word;
 }
 
+.word-style {
+    word-wrap:break-word;
+}
 
 .status-style {
     font-size: 30px;
@@ -200,24 +204,19 @@ footer {
     font-size: 20px;
 }
 
+.description {
+    padding: 10px;
+}
+
 .total {
-  margin-right: 10px;
-  display: inline-block;
-  font-weight: 400;
-  color: white;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: blue;
-  border: 1px solid white;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    background-color: #8bc34a;
+    color: white;
+    padding: 5px;
+    border: 1px solid darkgreen;
+    border-radius: 10px;
+    margin: 5px;
+    height: 40px;
+    
 }
 
 .status-style {
@@ -225,9 +224,13 @@ footer {
 }
 
 .leg-style {
-    color: black;
-    background-color: #ee878752;
+    color: white;
+    background-color: #AAAAAA;
     text-align: center;
+}
+
+.card-bgd {
+    background-color: #c2baba;
 }
 
 .search-style {

@@ -1,14 +1,22 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
 {% block content %}
-    <div class="centre-elem">
-        <h1>Issue Details</h1>
-    </div>  
-    <div class="form-control-sm">
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form | as_bootstrap }}
-            <button type="submit" class="btn btn-info centre-elem">Save</button>
-        </form>
+<div class="container-fluid issue_detail-wrapper">
+	<div class="row">
+		<div class="col content-area">
+			<div class="container detail-main mx-auto">
+                <div class="centre-elem">
+                    <h1>Issue Details</h1>
+                </div>  
+                <div class="form-control-sm">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form | as_bootstrap }}
+                        <button type="submit" class="btn btn-info centre-elem">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+</div>                
 {% endblock %}

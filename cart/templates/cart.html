@@ -3,40 +3,42 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-<div class="row row-flex centre-elem">
-    {% for item in cart_items %}
-    
-    <div class="col-sm-12 col-md-6 col-lg-3 card">        
-        <div class="card-body issue-bgd">
-            <p class="card-title centre-elem"><a href="{% url 'issue_detail' item.issue.id %}">{{ item.issue.name }}</a></p>
-            <p class="card-subtitle mb-2">{{ item.issue.description |truncatewords:5 }}</p>
-            <p class="card-text text-centre">€{{ item.issue.price }} per vote</p>
-            <p>
-                
-                <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label for="exampleInputAmount" class="sr-only">New Qty</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">Votes</div>
-                            <input name="quantity" type="number" min="0" max="999" class="form-control">
-                            <div class="input-group-addon">{{item.quantity}}</div>
+<div class="container-fluid issue_detail-wrapper">
+	<div class="row">
+		<div class="col content-area">
+			<div class="container detail-main mx-auto">
+                <div class="row row-flex centre-elem">
+                    {% for item in cart_items %}
+                    
+                    <div class="col-sm-12 col-md-6 col-lg-3 card">        
+                        <div class="card-body card-bgd">
+                            <p class="card-title centre-elem">{{ item.issue.name }}<a href="{% url 'issue_detail' item.issue.id %}">(view)</a></p>
+                            <p class="card-text description">{{ item.issue.description |truncatewords:30 }}</p>
+                            <p class="card-text centre-elem">€{{ item.issue.price }} per vote</p>
+                            <p>
+                                
+                                <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="exampleInputAmount" class="sr-only">New Qty</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">Votes</div>
+                                            <input name="quantity" type="number" min="0" max="999" class="form-control">
+                                            <div class="input-group-addon">{{item.quantity}}</div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary centre-elem"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
+                                </form>
+                            </p>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary centre-elem"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
-                </form>
-            </p>
+                    {% endfor %}
+                </div>
+                <div class="row centre-elem">
+                    <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
+                </div>
+            </div>
         </div>
     </div>
-    {% endfor %}
-</div>
-<div class="row centre-elem">
-    <div class="total">
-        <p>Total: <span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
-    </div>
-    <div>    
-        <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
-    </div> 
-</div>
-
+</div>  
 {% endblock %}

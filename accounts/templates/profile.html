@@ -5,5 +5,13 @@
 {% block page_heading %}{{ user }}'s Profile{% endblock %}
 
 {% block content %}
-<p>{{ profile.email }}</p>
+<div class="container-fluid issue_detail-wrapper">
+	<div class="row">
+		<div class="col content-area">
+			<div class="container detail-main mx-auto">
+                {{ user.name }}
+			</div>
+		</div>
+	</div>
+</div>        
 {% endblock %}
