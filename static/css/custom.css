@@ -18,7 +18,7 @@ footer {
 /*--------background Style---------*/
 
 .navbar-cust {
-    background-color: #f7e8dd;
+    background-color: #DDDDDD;
 }
 
 
@@ -27,18 +27,27 @@ footer {
 }
 
 .issue-bgd {
-    background-color: #f7e8dd;
+    background-color: #DDDDDD;
     color: black;
     margin-top: 10px;
     padding-top: 10px;
     border: 1px solid #ededed;
 }
 
-.comment-style{
+.comment-section{
     padding: 5px;
-    border: 1px solid black;
-    border-radius: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
+
+.comment {
+    background-color: #ffffff;
+    padding: 5px;
+    border: 1px solid #726e6e66;
+    border-radius: 8px;
+    margin: 2px;
+}
+
 
 /*--------background status-text---------*/
 .draft-bgd {
@@ -127,7 +136,7 @@ footer {
 
 
 .detail-main .header-content {
-  background-color: #efc5b5;
+  background-color: #AAAAAA;
   color: white;
   height: 40px;
   border-top-right-radius: 25px;
@@ -136,7 +145,7 @@ footer {
 }
 
 .detail-main {
-  background-color: #f7e8dd;
+  background-color: #DDDDDD;
   margin-bottom: 50px;
   margin-top: -20px;
   border-radius: 25px;

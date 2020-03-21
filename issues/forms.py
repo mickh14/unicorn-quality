@@ -11,7 +11,7 @@ class IssueForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('body', 'comment_date', 'name', 'author')
+        fields = ('name', 'body')
 
 
 class DoneForm(forms.ModelForm):

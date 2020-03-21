@@ -168,20 +168,20 @@
                     </div>
 			    </div>
                 <hr>
-                <div class="container comment-style">
-                    <h3 class="text-center">Reviews</h3> 
-                    <div class="row centre-elem">  
+                <div class="comment-section">
+                    <h3 class="text-center">Comments</h3> 
+                    <div class="card">  
                         {% for comment in comments %}
-                    
-                            <p>Summary:{{ comment.name }}</p>
-                            <p>Comment:{{ comment.body }}</p>
-                            <p>Author: {{ comment.author }}</p>
-                            <p>Created: {{ comment.comment_date }}</p>
-                    
+                        <div class="card-body comment">
+                            <h5 class="card-title">{{ comment.name }}</h5>
+                            <i class="fa fa-quote-left" aria-hidden="true"></i> {{ comment.body }} <i class="fa fa-quote-right" aria-hidden="true"></i>
+                            <p class="text-right">{{ comment.author }}-{{ comment.comment_date }}</p>
+                        </div>
                         {% empty %}
                             <p>There are no comments</p>
+                        </div>       
                         {% endfor %} 
-                    </div>    
+                    </div>  
                 </div>
             
 		</div>
