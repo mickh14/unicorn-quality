@@ -15,7 +15,7 @@ div {
 /*--------background Style---------*/
 
 .navbar-cust {
-    background-color: #DDDDDD;
+    background-color: #2e3559;
 }
 
 
@@ -26,9 +26,11 @@ div {
 .issue-bgd {
     background-color: #DDDDDD;
     color: black;
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     padding-top: 10px;
     border: 1px solid #ededed;
+    border-radius: 15px;
 }
 
 .comment-section{
@@ -39,6 +41,7 @@ div {
 
 .comment {
     background-color: #ffffff;
+    color: black;
     padding: 5px;
     border: 1px solid #726e6e66;
     border-radius: 8px;
@@ -133,8 +136,8 @@ div {
 
 
 .detail-main .header-content {
-  background-color: #AAAAAA;
-  color: white;
+  background-color: #2e3559;
+  color: #2196f3;
   height: 40px;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
@@ -143,9 +146,12 @@ div {
 
 .detail-main {
   background-color: #DDDDDD;
+  color: black;
   margin-bottom: 50px;
   margin-top: -20px;
+  border: 1px solid #e8e3e3;
   border-radius: 25px;
+  width: 85%;
 }
 
 
@@ -166,8 +172,22 @@ div {
 
 
 
+/*--------Cart item Style---------*/
+.cart-item {
+    border: 1px solid #a7a3a3;
+    border-radius: 15px;
+    background-color: #c2baba;
+    margin-bottom: 5px;
+}
 
+/*--------Checkout Style---------*/
 
+.pay-form {
+    border: 1px solid #a7a3a3;
+    border-radius: 15px;
+    background-color: #c2baba;
+    margin-bottom: 5px;
+}
 /*--------customer Style---------*/
 
 .centre-elem {
@@ -224,10 +244,6 @@ div {
     color: white;
     background-color: #AAAAAA;
     text-align: center;
-}
-
-.card-bgd {
-    background-color: #c2baba;
 }
 
 .search-style {
@@ -297,17 +313,17 @@ caption p {
 /*-----------------footer*/
 
 .footerstyle {
-    background-color: #a5732a8a;
+    background-color: #2e3559;
     margin-bottom: 1px;
     margin-top: 1px;
-    color: #fff;
+    color: #2196f3;
 }
 
 
 .social-links {
     padding-bottom: 15px;
+    margin-top: 20px;
     list-style-type: none;
-    display: inline;
 }
 
 

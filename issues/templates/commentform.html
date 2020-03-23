@@ -1,12 +1,22 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
 {% block content %}
-    <div class="centre-elem">
-        <h1>Comments</h1>
-    </div>    
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form | as_bootstrap }}
-        <button type="submit" class="btn btn-info centre-elem">Save</button>
-    </form>
+<div class="container-fluid issue_detail-wrapper">
+	<div class="row">
+		<div class="col content-area">
+			<div class="container detail-main mx-auto">
+                <div class="header-content row d-flex">
+					<div class="col-12 centre-elem issue-head">
+                        <i class="fas fa-comment"> New Comment</i>
+					</div>    
+                </div>     
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | as_bootstrap }}
+                    <button type="submit" class="btn btn-info centre-elem">Save</button>
+                </form>
+			</div>
+		</div>
+	</div>
+</div>                
 {% endblock %}

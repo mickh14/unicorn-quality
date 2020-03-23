@@ -7,19 +7,23 @@
 	<div class="row">
 		<div class="col content-area">
 			<div class="container detail-main mx-auto">
+                <div class="header-content row d-flex">
+					<div class="col-12 centre-elem issue-head">
+						<i class="fas fa-cart-plus"> Cart Contents</i>
+					</div>
+				</div>
                 <div class="row row-flex centre-elem">
                     {% for item in cart_items %}
                     
                     <div class="col-sm-12 col-md-6 col-lg-3 card">        
-                        <div class="card-body card-bgd">
-                            <p class="card-title centre-elem">{{ item.issue.name }}<a href="{% url 'issue_detail' item.issue.id %}">(view)</a></p>
-                            <p class="card-text description">{{ item.issue.description |truncatewords:30 }}</p>
+                        <div class="card-body cart-item">
+                            <p class="card-title centre-elem">{{ item.issue.name }} <a href="{% url 'issue_detail' item.issue.id %}"> (view)</a></p>
                             <p class="card-text centre-elem">€{{ item.issue.price }} per vote</p>
                             <p>
                                 
                                 <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
                                     {% csrf_token %}
-                                    <div class="form-group">
+                                    <div class="form-group centre-elem">
                                         <label for="exampleInputAmount" class="sr-only">New Qty</label>
                                         <div class="input-group">
                                             <div class="input-group-addon">Votes</div>
