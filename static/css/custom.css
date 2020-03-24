@@ -168,6 +168,9 @@ div {
 
 .detail-btn {
     padding: 10px;
+    background-color: blue;
+    border-radius: 25px;
+
 }
 
 
@@ -199,6 +202,14 @@ div {
     margin-right: 10px;
     margin-left: 10px;
     word-wrap:break-word;
+}
+
+.btn-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .word-style {

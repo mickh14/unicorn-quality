@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, redirect, HttpResponseRedirect
 from django.contrib import messages, auth
 from django.core.urlresolvers import reverse
 from .forms import UserLoginForm, UserRegistrationForm
-from .models import User
+from django.contrib.auth.models import User
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 
@@ -47,9 +47,10 @@ def login(request):
 
 
 @login_required
-def profile(request):
+def profile(request, pk):
     """A view that displays the profile page of a logged in user"""
-    return render(request, 'profile.html')
+    user = get_object_or_404(User, pk=pk)
+    return render(request, 'profile.html', {'user': user})
 
 
 def register(request):
