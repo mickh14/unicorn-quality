@@ -18,9 +18,7 @@
                 {% endif %}
             </div>
             <div class="col-xs-12 col-sm-6 col-lg-4 issue-head">
-                {% if issue.status == "Draft" %}
-                    <p class="boldtext card-text"><span class="draft-bgd">{{ issue.status }}</span></p>
-                {% elif issue.status == "ToDo" %}
+                {% if issue.status == "ToDo" %}
                     <p class="boldtext card-text"><span class="todo-bgd">{{ issue.status }}</span></p>
                 {% elif issue.status == "InDevelopment" %}
                     <p class="boldtext card-text"><span class="indev-bgd">{{ issue.status }}</span></p>

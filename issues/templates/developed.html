@@ -1,47 +1,55 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row row-flex centre-elem">
-	{% for issue in issues %}
-	<div class="card col-xs-9 detail-main">
-		<div class="card-header header-content centre-elem">
-			{% if issue.issue_type == "Bug" %}
-			    <i class="fas fa-bug"> {{ issue.name }}</i>
-			{% else %}
-			    <i class="fas fa-check-double"> {{ issue.name }}</i>
-			{% endif %}
-		</div>
-		<div class="card-body">
-			<h5 class="card-title description">Description: {{ issue.description }}</h5>
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-lg-6">
-                    <dl>
-						<dt>Root Cause</dt>
-						<dd>
-							<p class="text-justify">{{ issue.root_cause }}</p>
-						</dd>
-					</dl>
+<div class="container-fluid issue_detail-wrapper">
+    <div class="row">
+		<div class="col content-area">
+            {% for issue in issues %}
+            <div class="container detail-main mx-auto">
+                <div class="header-content row d-flex">
+                    {% if issue.issue_type == "Bug" %}
+                    <div class="col-12 centre-elem issue-head">
+                        <i class="fas fa-bug"> {{ issue.name }}</i>
+                    </div>
+                    {% else %}
+                    <div class="col-12 centre-elem issue-head">
+                        <i class="fas fa-check-double"> {{ issue.name }}</i>
+                    </div>
+                    {% endif %}
                 </div>
-                <div class="col-xs-12 col-sm-12 col-lg-6">
-                    <dl>
-						<dt>Resolution</dt>
-						<dd>
-							<p class="text-justify">{{ issue.resolution }}</p>
-						</dd>
-					</dl>
+                <div class="card-body">
+                    <h5 class="card-title description">Description: {{ issue.description }}</h5>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-lg-6">
+                            <dl>
+                                <dt>Root Cause</dt>
+                                <dd>
+                                    <p class="text-justify">{{ issue.root_cause }}</p>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-lg-6">
+                            <dl>
+                                <dt>Resolution</dt>
+                                <dd>
+                                    <p class="text-justify">{{ issue.resolution }}</p>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card-footer text-center">
+                    <p class="card-text">
+                        <a href="{% url 'issue_detail' issue.id %}" class="btn btn-primary">Details</a>
+                    </p>
+                    
                 </div>
             </div>
-			
+            {% endfor %}
 		</div>
-		<div class="card-footer text-center">
-			<p class="card-text">
-				<a href="{% url 'issue_detail' issue.id %}" class="btn btn-default">Details</a>
-			</p>
-			
-		</div>
-	</div>
-	{% endfor %}
+    </div>
 </div>
 
 {% endblock %}

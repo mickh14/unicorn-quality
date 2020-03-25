@@ -5,13 +5,25 @@
 {% block page_heading %}{{ user }}'s Profile{% endblock %}
 
 {% block content %}
+
 <div class="container-fluid issue_detail-wrapper">
 	<div class="row">
 		<div class="col content-area">
 			<div class="container detail-main mx-auto">
-                {{ user.name }}
+                <div class="header-content row d-flex">
+					<div class="col-12 centre-elem issue-head">
+						<i class="fa fa-user"> Profile</i>
+					</div>
+			    </div>
+                <div class="card-body cart-item">
+					<p class="card-title centre-elem">Username: {{ user.username }}</p>
+					<p class="card-text centre-elem">Email: {{ user.email }}</p>
+                </div>
+                
 			</div>
 		</div>
 	</div>
-</div>        
+</div>  
+
 {% endblock %}
+

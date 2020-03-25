@@ -23,18 +23,16 @@
 					<div class="col-xs-12 col-sm-3 col-lg-3 first_col">
 						<div class="justify-content-center">
 							<div class="row centre-elem">
-								{% if issue.status == "Draft" %}
-								<p class="boldtext"><span class="draft-bgd status-style">{{ issue.status }} </span></p>
-								{% elif issue.status == "ToDo" %}
-								<p class="boldtext"><span class="todo-bgd status-style">{{ issue.status }}</span></p>
+								{% if issue.status == "ToDo" %}
+								<p class="boldtext">Status: <span class="todo-bgd status-style">{{ issue.status }}</span></p>
 								{% elif issue.status == "InDevelopment" %}
-								<p class="boldtext"><span class="indev-bgd status-style">{{ issue.status }}</span></p>
+								<p class="boldtext">Status: <span class="indev-bgd status-style">{{ issue.status }}</span></p>
 								{% elif issue.status == "Fixed" %}
-								<p class="boldtext"><span class="fixed-bgd status-style">{{ issue.status }}</span></p>
+								<p class="boldtext">Status: <span class="fixed-bgd status-style">{{ issue.status }}</span></p>
 								{% elif issue.status == "InTest" %}
-								<p class="boldtext"><span class="intest-bgd status-style">{{ issue.status }}</span></p>
+								<p class="boldtext">Status: <span class="intest-bgd status-style">{{ issue.status }}</span></p>
 								{% elif issue.status == "Done" %}
-								<p class="boldtext"><span class="done-bgd status-style">{{ issue.status }}</span></p>
+								<p class="boldtext">Status: <span class="done-bgd status-style">{{ issue.status }}</span></p>
 								{% else %}
 								<p class="boldtext card-text">
 									<span class="draft-bgd status-style">Issue: {{ issue.status }}</span></p>
@@ -42,10 +40,10 @@
 							</div>
 							<div class="row icon">
 								<div class="col-xs-6 col-sm-6 col-lg-6 text-center">
-									<i class="far fa-eye"> {{ issue.views }}</i>
+									Views:<i class="far fa-eye"> {{ issue.views }}</i>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-lg-6 text-center">
-									<i class="fas fa-thumbs-up"> {{ issue.votes }}</i>
+									Votes: <i class="fas fa-thumbs-up"> {{ issue.votes }}</i>
 								</div>
 							</div>
 							{% if issue.status == "InTest" %}
@@ -96,7 +94,7 @@
                             {% endif %}    
 							<div class="row">
 								
-                                <p><small><span class="boldtext"><strong>Created by:</strong></span>
+                                <p align="right"><small><span class="boldtext"><strong>Created by:</strong></span>
 									{{ issue.author }} on {{ issue.published_date }}</small></p>    
 							</div>
 						</div>

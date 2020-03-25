@@ -27,7 +27,7 @@ div {
     background-color: #DDDDDD;
     color: black;
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     padding-top: 10px;
     border: 1px solid #ededed;
     border-radius: 15px;
@@ -45,20 +45,14 @@ div {
     padding: 5px;
     border: 1px solid #726e6e66;
     border-radius: 8px;
-    margin: 2px;
+    margin: 5px;
 }
 
 
 /*--------background status-text---------*/
-.draft-bgd {
-    background-color: #f0f8ff;
-    color: black;
-    padding: 5px;
-    border: 1px solid black;
-}
 
 .todo-bgd {
-    background-color: #edf1fe;
+    background-color: #ebaba6;
     color: black;
     padding: 5px;
     border: 1px solid black;
@@ -66,7 +60,7 @@ div {
 }
 
 .indev-bgd {
-    background-color: #d8e8e6;
+    background-color: #ddbb8a;
     color: black;
     padding: 5px;
     border: 1px solid black;
@@ -74,7 +68,7 @@ div {
 }
 
 .fixed-bgd {
-    background-color: #e5edf1;
+    background-color: #bceb86;
     color: black;
     padding: 5px;
     border: 1px solid black;
@@ -180,7 +174,8 @@ div {
     border: 1px solid #a7a3a3;
     border-radius: 15px;
     background-color: #c2baba;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /*--------Checkout Style---------*/
@@ -212,12 +207,16 @@ div {
     margin-bottom: 5px;
 }
 
+.btn-cancel {
+    margin: 5px;
+}
+
 .word-style {
     word-wrap:break-word;
 }
 
 .status-style {
-    font-size: 30px;
+    font-size: 15px;
 }
 
 .icon {
@@ -245,10 +244,6 @@ div {
     margin: 5px;
     height: 40px;
     
-}
-
-.status-style {
-    font-size: 30px;
 }
 
 .leg-style {
@@ -316,7 +311,7 @@ caption p {
 .row.row-flex {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 5px;
 }
 
 

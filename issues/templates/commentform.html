@@ -13,8 +13,12 @@
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form | as_bootstrap }}
-                    <button type="submit" class="btn btn-info centre-elem">Save</button>
+                    <div class="row centre-elem">    
+                        <button type="submit" class="btn btn-info">Save</button>
+                        <a href="{% url 'issues' %}" class="btn btn-primary btn-cancel">Cancel</a>
+                    </div>
                 </form>
+                
 			</div>
 		</div>
 	</div>
