@@ -227,6 +227,10 @@ div {
 
 /*--------////customer Style---------*/
 
+.first_col {
+    margin-top: 20px;
+}
+
 .dev-item-stle {
     font-size: 20px;
 }

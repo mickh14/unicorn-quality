@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $(window).on("scroll", function(){
+    $(window).on("load", function(){
         $(".progress").each(function(issuedetail, progress ){
            var progressBar = $(progress).find(".progress-bar");
            var progressPercent = parseInt($(progressBar).attr("data-progress"));
