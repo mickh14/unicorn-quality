@@ -12,16 +12,89 @@ div {
     width: auto;
 }
 
-/*--------background Style---------*/
+/*--------common Style---------*/
+
+.issue_detail-wrapper .favorited .fa{
+  font-size: 2.4em;
+}
+
+.content-area {
+  margin-top: 40px;
+}
+
+.detail-main .header-content {
+  background-color: #2e3559;
+  color: #2196f3;
+  height: 40px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+
+}
+
+.detail-main {
+  background-color: #DDDDDD;
+  color: black;
+  margin-bottom: 50px;
+  margin-top: -20px;
+  border: 1px solid #e8e3e3;
+  border-radius: 25px;
+  width: 85%;
+}
+
+.centre-elem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    word-wrap:break-word;
+}
+
+.btn-cancel {
+    margin: 5px;
+}
+
+.row.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+/*--------/common Style---------*/
+/*--------base Style---------*/
 
 .navbar-cust {
     background-color: #2e3559;
 }
 
-
-.base-bgd {
-    background-color: lightgray;
+.main_bgd{
+    background: url("../images/devops.jpg") no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
 }
+
+.search-style {
+    background: #514b497a;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.search-field {
+    height: 30px;
+    color: black;
+}
+
+/*--------/base Style---------*/
+
+/*--------Issue style---------*/
 
 .issue-bgd {
     background-color: #DDDDDD;
@@ -32,6 +105,40 @@ div {
     border: 1px solid #ededed;
     border-radius: 15px;
 }
+
+.issue-head {
+    font-size: 25px;
+}
+
+.word-style {
+    word-wrap:break-word;
+}
+
+.status-style {
+    font-size: 15px;
+}
+
+.first_col {
+    margin-top: 20px;
+}
+
+.second-column {
+  padding: 0px 45px;
+  margin-top: 40px;
+}
+
+.icon {
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.description {
+    padding: 10px;
+}
+/*--------/Issue style---------*/
+
+/*--------Comments Style---------*/
 
 .comment-section{
     padding: 5px;
@@ -48,8 +155,8 @@ div {
     margin: 5px;
 }
 
-
-/*--------background status-text---------*/
+/*--------/Comments Style---------*/
+/*--------Issue Status background---------*/
 
 .todo-bgd {
     background-color: #ebaba6;
@@ -91,83 +198,7 @@ div {
     border-radius: 8px;
 }
 
-.main_bgd{
-    background: url("../images/devops.jpg") no-repeat center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    align-items: center;
-    justify-content: center;
-    position: relative; 
-
-}
-
-
-/*--------custom Issue---------*/
-
-.issue-head {
-    font-size: 25px;
-}
-
-/*--------custom Issue Detail---------*/
-
-
-.issue_detail-wrapper .favorited .fa{
-  font-size: 2.4em;
-}
-
-.content-area {
-  margin-top: 40px;
-}
-
-
-.second-column {
-  padding: 0px 45px;
-  margin-top: 40px;
-}
-
-
-
-.detail-main .header-content {
-  background-color: #2e3559;
-  color: #2196f3;
-  height: 40px;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
-
-}
-
-.detail-main {
-  background-color: #DDDDDD;
-  color: black;
-  margin-bottom: 50px;
-  margin-top: -20px;
-  border: 1px solid #e8e3e3;
-  border-radius: 25px;
-  width: 85%;
-}
-
-
-.shape {
-  border-radius: 0px;
-  display: inline;
-  height: 60px;
-  max-width: 180px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background-color: #ffffff;
-  margin: 30px;
-}
-
-.detail-btn {
-    padding: 10px;
-    background-color: blue;
-    border-radius: 25px;
-
-}
-
-
+/*--------/background status-text---------*/
 
 /*--------Cart item Style---------*/
 .cart-item {
@@ -177,7 +208,7 @@ div {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
+/*--------/Cart item Style---------*/
 /*--------Checkout Style---------*/
 
 .pay-form {
@@ -186,139 +217,12 @@ div {
     background-color: #c2baba;
     margin-bottom: 5px;
 }
-/*--------customer Style---------*/
-
-.centre-elem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
-    word-wrap:break-word;
-}
-
-.btn-custom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.btn-cancel {
-    margin: 5px;
-}
-
-.word-style {
-    word-wrap:break-word;
-}
-
-.status-style {
-    font-size: 15px;
-}
-
-.icon {
-    padding: 10px;
-    margin: 10px;
-    font-size: 20px;
-}
-
-/*--------////customer Style---------*/
-
-.first_col {
-    margin-top: 20px;
-}
-
-.dev-item-stle {
-    font-size: 20px;
-}
-
-.description {
-    padding: 10px;
-}
-
-.total {
-    background-color: #8bc34a;
-    color: white;
-    padding: 5px;
-    border: 1px solid darkgreen;
-    border-radius: 10px;
-    margin: 5px;
-    height: 40px;
-    
-}
-
-.leg-style {
-    color: white;
-    background-color: #AAAAAA;
-    text-align: center;
-}
-
-.search-style {
-    background: #514b497a;
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.search-button {
-    color: white;
-    background-color: #002d80b5;
-    border: 1px solid #ddd;
-    height: 30px;
-    margin: 10px;
-}
-
-
-.form-style {
-    margin: 10px;
-}
-
-.search-field {
-    height: 30px;
-    color: black;
-}
-
-.icon-bar {
-    background-color: #fff;
-}
+/*--------Checkout Style---------*/
+/*--------Accounts Style---------*/
 
 .accountform {
     padding-top: 20px;
 }
-
-.badge {
-    padding-left: 9px;
-    padding-right: 9px;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    border-radius: 9px;
-}
-
-
-.issue {
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-}
-
-caption p {
-    word-wrap: break-word;
-}
-
-.row.row-flex {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 5px;
-}
-
-
 
 /*-----------------footer*/
 
