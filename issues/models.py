@@ -23,8 +23,7 @@ class Issue(models.Model):
     status_option = (
         ('ToDo', 'ToDo'),
         ('InDevelopment', 'InDevelopment'),
-        ('Fixed', 'Fixed'),
-        ('InTest', 'InTest'),
+        ('ReadyForTest', 'ReadyForTest'),
     )
     status = models.CharField(max_length=30, blank=True, null=False, choices=status_option)
     views = models.IntegerField(default=0)

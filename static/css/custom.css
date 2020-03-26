@@ -128,9 +128,7 @@ div {
 }
 
 .icon {
-    padding: 10px;
-    margin: 10px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .description {
@@ -167,7 +165,7 @@ div {
 }
 
 .indev-bgd {
-    background-color: #ddbb8a;
+    background-color: #f3bb12;
     color: black;
     padding: 5px;
     border: 1px solid black;
@@ -191,7 +189,7 @@ div {
 }
 
 .done-bgd {
-    background-color: #f4e8d1;
+    background-color: #4caf50;
     color: black;
     padding: 5px;
     border: 1px solid black;

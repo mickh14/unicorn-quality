@@ -29,7 +29,7 @@
 								<p class="boldtext">Status: <span class="indev-bgd status-style">{{ issue.status }}</span></p>
 								{% elif issue.status == "Fixed" %}
 								<p class="boldtext">Status: <span class="fixed-bgd status-style">{{ issue.status }}</span></p>
-								{% elif issue.status == "InTest" %}
+								{% elif issue.status == "ReadyForTest" %}
 								<p class="boldtext">Status: <span class="intest-bgd status-style">{{ issue.status }}</span></p>
 								{% elif issue.status == "Done" %}
 								<p class="boldtext">Status: <span class="done-bgd status-style">{{ issue.status }}</span></p>
@@ -39,16 +39,16 @@
 								{% endif %}
 							</div>
 							<div class="row icon">
-								<div class="col-xs-6 col-sm-6 col-lg-6 text-center">
-									Views:<i class="far fa-eye"> {{ issue.views }}</i>
+								<div class="col-xs-6 col-sm-6 col-lg-6">
+                                    <p class="boldtext">Views: <i class="far fa-eye"> {{ issue.views }}</i></p>
 								</div>
-								<div class="col-xs-6 col-sm-6 col-lg-6 text-center">
-									Votes: <i class="fas fa-thumbs-up"> {{ issue.votes }}</i>
+								<div class="col-xs-6 col-sm-6 col-lg-6 ">
+									<p class="boldtext">Views: <i class="fas fa-thumbs-up"> {{ issue.votes }}</i></p>
 								</div>
 							</div>
-							{% if issue.status == "InTest" %}
+							{% if issue.status == "ReadyForTest" %}
 							<div class="centre-elem">
-								<a href="{% url 'pass_test' issue.id %}" class="btn btn-success">Passed</a>
+								<a href="{% url 'pass_test' issue.id %}" class="btn btn-success">Issue Resolved</a>
 							</div>
 							{% else %}
 							<div class="">

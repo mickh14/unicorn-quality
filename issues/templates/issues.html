@@ -24,7 +24,7 @@
                     <p class="boldtext card-text"><span class="indev-bgd">{{ issue.status }}</span></p>
                 {% elif issue.status == "Fixed" %}
                     <p class="boldtext card-text"><span class="fixed-bgd">{{ issue.status }}</span></p>
-                {% elif issue.status == "InTest" %}
+                {% elif issue.status == "ReadyForTest" %}
                     <p class="boldtext card-text"><span class="intest-bgd">{{ issue.status }}</span></p>
                 {% elif issue.status == "Done" %}
                     <p class="boldtext card-text"><span class="done-bgd">{{ issue.status }}</span></p>
