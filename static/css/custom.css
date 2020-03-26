@@ -4,7 +4,7 @@ body {
     font-family: Arial;
     padding-top: 50px;
     color: black;
-    background-color: #DDDDDD;
+    background-color: #031539;
 }
 
 
@@ -25,7 +25,6 @@ div {
 .detail-main .header-content {
   background-color: #2e3559;
   color: #2196f3;
-  height: 40px;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
 
@@ -99,11 +98,14 @@ div {
 .issue-bgd {
     background-color: #DDDDDD;
     color: black;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding-top: 10px;
+    margin: 5px 0;
+    padding: 10px 10px;
     border: 1px solid #ededed;
     border-radius: 15px;
+}
+
+.card-text {
+    padding-left: 15px;
 }
 
 .issue-head {
@@ -129,19 +131,18 @@ div {
 
 .icon {
     font-size: 15px;
+    margin-bottom: 10px;
 }
 
 .description {
-    padding: 10px;
+    padding: 10px 0;
 }
 /*--------/Issue style---------*/
 
 /*--------Comments Style---------*/
 
-.comment-section{
-    padding: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
+.comment-section .card-body {
+    padding: 10px;
 }
 
 .comment {
@@ -229,6 +230,7 @@ div {
     margin-bottom: 1px;
     margin-top: 1px;
     color: #2196f3;
+    padding: 0 15px;
 }
 
 

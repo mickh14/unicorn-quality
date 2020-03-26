@@ -20,7 +20,6 @@
                         <div class="card-body cart-item">
                             <p class="card-title centre-elem">{{ item.issue.name }} <a href="{% url 'issue_detail' item.issue.id %}"> (view)</a></p>
                             <p class="card-text centre-elem">€{{ item.issue.price }} per vote</p>
-                            <p>
                                 
                                 <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
                                     {% csrf_token %}
@@ -34,7 +33,6 @@
                                     </div>
                                     <button type="submit" class="btn btn-primary centre-elem"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
                                 </form>
-                            </p>
                         </div>
                     </div>
                     {% endfor %}

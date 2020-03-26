@@ -94,7 +94,7 @@
                             {% endif %}    
 							<div class="row">
 								
-                                <p align="right"><small><span class="boldtext"><strong>Created by:</strong></span>
+                                <p class="card-text text-left"><small><span class="boldtext"><strong>Created by:</strong></span>
 									{{ issue.author }} on {{ issue.published_date }}</small></p>    
 							</div>
 						</div>
@@ -155,13 +155,13 @@
 				    </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-4 col-lg-4 btn-custom">
+                    <div class="col-xs-12 col-sm-4 col-lg-4 btn-custom text-center">
                         <a href="{% url 'issues' %}" class="btn btn-primary">Back to Issues</a>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-lg-4 btn-custom">
+                    <div class="col-xs-12 col-sm-4 col-lg-4 btn-custom text-center">
                         <a href="{% url 'edit_issue' issue.id %}" class="btn btn-primary">Edit Issue</a>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-lg-4 btn-custom">
+                    <div class="col-xs-12 col-sm-4 col-lg-4 btn-custom text-center">
                         <a href="{% url 'add_comment' issue.id %}" class="btn btn-primary">Add Comment</a>
                     </div>
 			    </div>
