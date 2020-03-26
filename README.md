@@ -1,5 +1,7 @@
 **Unicorn Attractor Quality UX Strategy**
 
+[![Build Status](https://travis-ci.org/mickh14/unicorn-quality.svg?branch=master)](https://travis-ci.org/mickh14/unicorn-quality)
+
 **Business Goal** : To deliver an easy to use website that will allow users of the UnicornAttractor Quality app to create tickets to track issues with the app to facilitate quality improvement.
 
 The issues can be &#39;Bugs&#39; which will be fixed for free or &#39;Feature&#39; which will be developed when enough money is received.
