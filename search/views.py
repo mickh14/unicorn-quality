@@ -8,10 +8,7 @@ from django.contrib import messages
 
 def do_search(request):
     issues = Issue.objects.filter(name__icontains=request.GET['q'])
-    if issues == None:
-        messages.error(request, "There were no results")
-    else:    
-        return render(request, "issues.html", {"issues": issues})
+    return render(request, "issues.html", {"issues": issues})
 
 
     # Filter issue based on bug
